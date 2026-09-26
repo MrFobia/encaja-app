@@ -1,46 +1,69 @@
 @reference "../index.css";
 @layer components {
+  /* ── Hero full-bleed ─────────────────────────────────────────── */
   .home-hero {
-    @apply grid grid-cols-1 items-center gap-10 py-16 md:grid-cols-[1.1fr_0.9fr];
+    @apply relative isolate overflow-hidden;
+    min-height: min(94vh, 880px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .home-hero__bg {
+    @apply absolute inset-0 -z-20;
+    background-image: url("/images/atmosphere/hero-atmosphere.jpg");
+    background-size: cover;
+    background-position: 62% 45%;
+    transform: scale(1.08);
+    will-change: transform;
+  }
+
+  /* Scrim: oscurece la mitad izquierda para que el titular en claro
+     tenga contraste real contra la foto, sin taparla del todo. */
+  .home-hero__scrim {
+    @apply absolute inset-0 -z-10;
+    background:
+      linear-gradient(
+        100deg,
+        rgba(15, 22, 22, 0.92) 0%,
+        rgba(20, 30, 30, 0.72) 34%,
+        rgba(20, 30, 30, 0.28) 58%,
+        rgba(20, 30, 30, 0.05) 74%,
+        transparent 88%
+      ),
+      linear-gradient(to top, rgba(10, 16, 16, 0.55) 0%, transparent 30%);
+  }
+
+  .home-hero__inner {
+    @apply relative z-10 grid grid-cols-1 items-center gap-10 py-20 md:grid-cols-[1.05fr_0.95fr];
+  }
+
+  .home-hero__copy {
+    @apply max-w-[620px];
   }
 
   .home-hero__title {
-    @apply mt-3 text-[clamp(2.4rem,6vw,4rem)] leading-[1.04] tracking-tight;
+    @apply text-[clamp(2.6rem,6vw,4.2rem)] leading-[1.03] tracking-tight text-cream;
+    text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
   }
 
   .home-hero__title em {
-    @apply font-normal not-italic text-terracotta;
+    @apply font-normal not-italic;
+    color: #f0916f;
   }
 
   .home-hero__lead {
-    @apply mt-5 max-w-[560px] text-lg text-neutral-body;
-  }
-
-  .home-hero__pills {
-    @apply mt-8 flex flex-wrap gap-3.5;
-  }
-
-  .home-hero__pill {
-    @apply rounded-xl border border-border bg-white px-4 py-3 text-sm;
-    box-shadow: var(--shadow-card-sm);
-    max-width: 220px;
-  }
-
-  .home-hero__pill b {
-    @apply block font-serif text-[15px] font-semibold text-petrol;
-  }
-
-  .home-hero__pill span {
-    @apply text-neutral;
+    @apply mt-5 max-w-[540px] text-lg;
+    color: rgba(250, 246, 241, 0.86);
   }
 
   .home-hero__actions {
-    @apply mt-9 flex flex-wrap items-center gap-4;
+    @apply mt-9 flex flex-wrap items-center gap-5;
   }
 
   .home-hero__cta {
     @apply rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white transition-transform duration-150;
-    box-shadow: 0 10px 24px -10px rgba(232, 98, 61, 0.55);
+    box-shadow: 0 14px 32px -12px rgba(0, 0, 0, 0.55);
   }
 
   .home-hero__cta:hover {
@@ -48,38 +71,72 @@
   }
 
   .home-hero__secondary {
-    @apply text-sm font-semibold text-neutral underline decoration-dotted;
+    @apply text-sm font-semibold text-cream underline decoration-dotted decoration-white/40 underline-offset-4;
   }
 
   .home-hero__visual {
     @apply flex justify-center;
   }
 
-  /* Mismas dimensiones que .hero-3d (definida en Hero3D.css, que llega en su
-     propio chunk lazy): evita salto de layout mientras ese chunk carga. */
+  /* Sin caja de fondo: mientras carga el chunk de Hero3D, solo un halo
+     suave — nunca un rectángulo sólido tapando la foto. */
   .home-hero__visual-loading {
-    @apply relative aspect-square w-full max-w-[420px] overflow-hidden rounded-[28px] bg-cream-2;
-    animation: home-hero-visual-pulse 1.6s ease-in-out infinite;
+    @apply relative aspect-square w-full max-w-[460px];
+  }
+
+  .home-hero__visual-loading::after {
+    content: "";
+    @apply absolute inset-[18%] rounded-full;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.14), transparent 70%);
+    animation: home-hero-visual-pulse 1.8s ease-in-out infinite;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .home-hero__visual-loading {
+    .home-hero__visual-loading::after {
       animation: none;
+    }
+    .home-hero__bg {
+      transform: none;
     }
   }
 
   @keyframes home-hero-visual-pulse {
     0%,
     100% {
-      opacity: 1;
+      opacity: 0.5;
+      transform: scale(0.94);
     }
     50% {
-      opacity: 0.72;
+      opacity: 0.9;
+      transform: scale(1.02);
     }
   }
 
+  /* ── Pills: vidrio esmerilado sobre la foto, no cards blancas planas ── */
+  .home-hero__pills {
+    @apply relative z-10 flex flex-wrap gap-3.5 pb-12;
+  }
+
+  .home-hero__pill {
+    @apply rounded-xl border px-4 py-3 text-sm;
+    max-width: 240px;
+    background: rgba(250, 246, 241, 0.1);
+    border-color: rgba(250, 246, 241, 0.22);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+  }
+
+  .home-hero__pill b {
+    @apply block font-serif text-[15px] font-semibold text-cream;
+  }
+
+  .home-hero__pill span {
+    color: rgba(250, 246, 241, 0.78);
+  }
+
+  /* ── Steps ───────────────────────────────────────────────────── */
   .home-steps {
-    @apply col-span-full mt-6 grid grid-cols-1 gap-5 border-t border-border pt-12 sm:grid-cols-3;
+    @apply grid grid-cols-1 gap-5 border-t border-border py-14 sm:grid-cols-3;
     list-style: none;
     padding-left: 0;
   }

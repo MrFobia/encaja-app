@@ -1,6 +1,6 @@
 import { Component, Suspense, useState, type ReactNode } from "react";
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { ContactShadows, Environment, OrbitControls, useGLTF } from "@react-three/drei";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import "./Hero3D.css";
 
@@ -50,14 +50,27 @@ class ModelErrorBoundary extends Component<{ children: ReactNode }, BoundaryStat
 function Scene({ hovered }: { hovered: boolean }) {
   return (
     <>
-      <ambientLight intensity={0.9} />
-      <directionalLight position={[3, 4, 2]} intensity={1.8} color="#fff3ea" />
-      <pointLight position={[-3, -1, -2]} intensity={0.5} color="#8fae8b" />
+      <ambientLight intensity={0.35} />
+      <directionalLight position={[3, 4, 2]} intensity={1.6} color="#fff3ea" castShadow />
+      <pointLight position={[-3, -1, -2]} intensity={0.4} color="#8fae8b" />
+      {/* Environment real: le da a los materiales rugosos del kraft reflejos/
+          highlights creíbles en vez de leerse como plástico mate sin contexto. */}
+      <Environment preset="apartment" environmentIntensity={0.6} />
       <ModelErrorBoundary>
         <Suspense fallback={<PrimitiveBoxFallback />}>
           <RecipeBoxModel />
         </Suspense>
       </ModelErrorBoundary>
+      {/* Sombra de contacto: ancla la caja al "piso" de la escena en vez de
+          leerse como un objeto flotando sin gravedad. */}
+      <ContactShadows
+        position={[0, -1.05, 0]}
+        opacity={0.5}
+        scale={7}
+        blur={2.6}
+        far={2.2}
+        color="#1f3a3d"
+      />
       <OrbitControls
         enableZoom={false}
         enablePan={false}
@@ -111,7 +124,12 @@ export function Hero3D() {
       role="img"
       aria-label="Caja de recetas Encaja girando lentamente"
     >
-      <Canvas camera={{ position: [0, 0.6, 4.2], fov: 34 }} dpr={[1, 1.75]}>
+      <Canvas
+        camera={{ position: [0, 0.6, 4.2], fov: 34 }}
+        dpr={[1, 1.75]}
+        gl={{ alpha: true }}
+        shadows
+      >
         <Scene hovered={hovered} />
       </Canvas>
     </div>

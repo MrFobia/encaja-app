@@ -1,7 +1,10 @@
 @reference "../../index.css";
 @layer components {
+  /* Sin fondo propio: el canvas es transparente y compone directo sobre la
+     foto de atmósfera del hero — la sombra de contacto (ContactShadows, en
+     la escena) es lo que ancla la caja al "piso" de la foto. */
   .hero-3d {
-    @apply relative aspect-square w-full max-w-[420px] overflow-hidden rounded-[28px] bg-cream-2;
+    @apply relative aspect-square w-full max-w-[460px];
   }
 
   .hero-3d canvas {
