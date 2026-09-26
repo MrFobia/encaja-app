@@ -1,0 +1,38 @@
+@reference "../../index.css";
+@layer components {
+  .site-nav {
+    @apply sticky top-0 z-50 border-b border-border backdrop-blur-md;
+    background: rgba(250, 246, 241, 0.92);
+  }
+
+  .site-nav__inner {
+    @apply flex items-center justify-between py-3.5;
+  }
+
+  .site-nav__brand {
+    @apply flex items-center gap-2 font-serif text-[19px] font-semibold text-petrol no-underline;
+  }
+
+  .site-nav__dot {
+    @apply inline-block h-2.5 w-2.5 rounded-full bg-terracotta;
+  }
+
+  .site-nav__links {
+    @apply flex flex-wrap gap-5 text-sm font-medium text-neutral;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .site-nav__link {
+    @apply no-underline transition-colors duration-150;
+  }
+
+  .site-nav__link:hover {
+    @apply text-terracotta-dark;
+  }
+
+  .site-nav__link--active {
+    @apply font-semibold text-terracotta-dark;
+  }
+}

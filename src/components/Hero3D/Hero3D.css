@@ -1,0 +1,29 @@
+@reference "../../index.css";
+@layer components {
+  .hero-3d {
+    @apply relative aspect-square w-full max-w-[420px] overflow-hidden rounded-[28px] bg-cream-2;
+  }
+
+  .hero-3d canvas {
+    @apply outline-none;
+    touch-action: none;
+  }
+
+  .hero-3d--static {
+    @apply flex items-center justify-center;
+  }
+
+  .hero-3d__static-image {
+    @apply h-full w-full object-cover;
+  }
+
+  .hero-3d__static-fallback {
+    @apply relative flex h-2/3 w-2/3 items-center justify-center rounded-2xl;
+    background: linear-gradient(150deg, var(--color-terracotta), var(--color-sage));
+    box-shadow: var(--shadow-card);
+  }
+
+  .hero-3d__static-lid {
+    @apply absolute left-1/2 top-4 h-4 w-4/5 -translate-x-1/2 rounded-md bg-white/25;
+  }
+}

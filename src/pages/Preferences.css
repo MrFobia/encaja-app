@@ -1,0 +1,73 @@
+@reference "../index.css";
+@layer components {
+  .preferences-page {
+    @apply max-w-2xl py-16;
+  }
+
+  .preferences-page__title {
+    @apply mt-2 text-4xl;
+  }
+
+  .preferences-page__lead {
+    @apply mt-4 max-w-[65ch] text-[15.5px] text-neutral-body;
+  }
+
+  .preferences-page__section {
+    @apply mt-10;
+  }
+
+  .preferences-page__section-title {
+    @apply flex items-center gap-2.5 text-xl;
+  }
+
+  .preferences-page__section-tag {
+    @apply rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide;
+  }
+
+  .preferences-page__section-tag--allergy {
+    background: rgba(194, 59, 34, 0.1);
+    color: var(--color-allergy);
+  }
+
+  .preferences-page__section-tag--soft {
+    @apply bg-cream-2 text-neutral;
+  }
+
+  .preferences-page__section-hint {
+    @apply mt-1.5 max-w-[65ch] text-sm text-neutral;
+  }
+
+  .preferences-page__chip-row {
+    @apply mt-4 flex flex-wrap gap-2.5;
+  }
+
+  .preferences-page__counter {
+    @apply mt-10 flex items-baseline gap-2.5 rounded-2xl border border-border bg-white px-6 py-5;
+    box-shadow: var(--shadow-card-sm);
+  }
+
+  .preferences-page__counter-value {
+    @apply font-serif text-4xl font-semibold text-petrol;
+  }
+
+  .preferences-page__counter-label {
+    @apply text-sm text-neutral;
+  }
+
+  .preferences-page__actions {
+    @apply mt-8;
+  }
+
+  .preferences-page__cta {
+    @apply rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white transition-opacity duration-150;
+    box-shadow: 0 10px 24px -10px rgba(232, 98, 61, 0.55);
+  }
+
+  .preferences-page__cta:disabled {
+    @apply cursor-not-allowed opacity-40;
+  }
+
+  .preferences-page__warn {
+    @apply mt-3 text-sm font-semibold text-allergy;
+  }
+}

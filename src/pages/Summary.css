@@ -1,0 +1,82 @@
+@reference "../index.css";
+@layer components {
+  .summary-page {
+    @apply max-w-xl py-16;
+  }
+
+  .summary-page__title {
+    @apply mt-1 text-3xl;
+  }
+
+  .summary-page__lead {
+    @apply mt-3 text-[15.5px] text-neutral-body;
+  }
+
+  .summary-page__cta {
+    @apply mt-6 inline-block rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white no-underline;
+  }
+
+  .summary-page__list {
+    @apply mt-8 flex flex-col gap-2.5;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .summary-page__row {
+    @apply flex items-center gap-3 rounded-xl border border-border bg-white p-2.5;
+  }
+
+  .summary-page__row-text {
+    @apply flex-1;
+  }
+
+  .summary-page__row-text b {
+    @apply block font-serif text-[14px] text-petrol;
+  }
+
+  .summary-page__row-text span {
+    @apply text-xs text-neutral;
+  }
+
+  .summary-page__swap {
+    @apply rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-terracotta-dark transition-opacity;
+  }
+
+  .summary-page__swap:disabled {
+    @apply cursor-not-allowed opacity-40;
+  }
+
+  .summary-page__check {
+    @apply flex h-5 w-5 flex-none items-center justify-center rounded-full bg-sage text-xs text-white;
+  }
+
+  .summary-page__nutrition {
+    @apply mt-6;
+  }
+
+  .summary-page__nutrition-toggle {
+    @apply text-sm font-semibold text-terracotta-dark underline decoration-dotted;
+  }
+
+  .summary-page__nutrition-body {
+    @apply mt-2 rounded-xl bg-cream-2 p-3 text-sm text-neutral-body;
+  }
+
+  .summary-page__footer {
+    @apply mt-9 rounded-2xl border border-border bg-white p-6;
+    box-shadow: var(--shadow-card-sm);
+  }
+
+  .summary-page__price-row {
+    @apply flex justify-between text-sm text-neutral;
+  }
+
+  .summary-page__price-row b {
+    @apply font-serif text-base text-petrol;
+  }
+
+  .summary-page__confirm {
+    @apply mt-4 w-full rounded-2xl bg-terracotta-dark py-3.5 text-center text-sm font-bold text-white;
+    box-shadow: 0 10px 20px -8px rgba(232, 98, 61, 0.5);
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "http://localhost:*/**"
+        ],
+        "createdAt": "2026-09-26T20:19:29.211Z",
+        "reason": "Warm cream (#FAF6F1) is the app's deliberate, benchmark-driven base surface across all screens (documented in the design direction: avoids clinical white for a food-subscription product, ties to the persona's home-kitchen framing). Consistent by design across every route, not a per-page reflex default."
+      }
+    ]
+  }
+}

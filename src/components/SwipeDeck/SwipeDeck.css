@@ -1,0 +1,170 @@
+@reference "../../index.css";
+@layer components {
+  .swipe-deck {
+    @apply mx-auto flex w-full max-w-sm flex-col items-center;
+  }
+
+  .swipe-deck__progress {
+    @apply mb-6 flex w-full items-center gap-3;
+  }
+
+  .swipe-deck__progress-track {
+    @apply h-2 flex-1 overflow-hidden rounded-full bg-cream-2;
+  }
+
+  .swipe-deck__progress-fill {
+    @apply h-full w-full origin-left rounded-full bg-sage transition-transform duration-300 ease-out;
+  }
+
+  .swipe-deck__progress-label {
+    @apply whitespace-nowrap text-xs font-semibold text-neutral;
+  }
+
+  .swipe-deck__stage {
+    /* El card queda en flujo normal (centrado por flex); framer-motion
+       escribe `transform` inline para x/rotate, así que evitamos cualquier
+       utilidad de Tailwind que también dependa de `transform` (translate,
+       scale-por-clase) en este contenedor para no pisarnos el gesto. */
+    @apply relative flex h-[448px] w-full flex-col items-center;
+    padding-top: 24px;
+  }
+
+  .swipe-deck__behind {
+    @apply absolute h-[400px] w-[88%] rounded-[22px];
+    top: 40px;
+    left: 6%;
+    background: #e3d8c6;
+    z-index: 0;
+  }
+
+  .swipe-deck__card {
+    @apply relative h-[400px] w-full cursor-grab touch-none select-none outline-none;
+    z-index: 1;
+  }
+
+  .swipe-deck__card:active {
+    cursor: grabbing;
+  }
+
+  .swipe-deck__card .recipe-card {
+    @apply h-full;
+    box-shadow: 0 18px 34px -16px rgba(0, 0, 0, 0.35);
+  }
+
+  .swipe-deck__card .recipe-card__photo {
+    height: 100%;
+  }
+
+  .swipe-deck__recipe-card--refused {
+    animation: swipe-deck-shake 0.4s ease;
+  }
+
+  @keyframes swipe-deck-shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-6px);
+    }
+    75% {
+      transform: translateX(6px);
+    }
+  }
+
+  .swipe-deck__stamp {
+    @apply absolute top-6 z-20 rounded-lg border-[3px] px-3.5 py-1.5 font-serif text-lg font-bold uppercase tracking-wide;
+  }
+
+  .swipe-deck__stamp--keep {
+    @apply left-5 border-sage text-sage;
+    transform: rotate(-14deg);
+  }
+
+  .swipe-deck__stamp--pass {
+    @apply right-5 border-neutral text-neutral;
+    transform: rotate(14deg);
+  }
+
+  .swipe-deck__detail {
+    @apply mt-3 w-full text-center;
+  }
+
+  .swipe-deck__detail-toggle {
+    @apply text-sm font-semibold text-terracotta-dark underline decoration-dotted;
+  }
+
+  .swipe-deck__detail-panel {
+    @apply mt-2 rounded-xl border border-border bg-white p-3 text-left text-sm text-ink;
+  }
+
+  .swipe-deck__detail-tags {
+    @apply mt-1 flex flex-wrap gap-1.5 text-xs text-neutral;
+    list-style: none;
+    padding: 0;
+  }
+
+  .swipe-deck__detail-tags li {
+    @apply rounded-full bg-cream-2 px-2 py-0.5;
+  }
+
+  .swipe-deck__detail-warn {
+    @apply mt-2 font-semibold text-allergy;
+  }
+
+  .swipe-deck__actions {
+    @apply mt-4 flex items-center justify-center gap-4;
+  }
+
+  .swipe-deck__action {
+    @apply flex h-14 w-14 items-center justify-center rounded-full border-[1.5px] border-border bg-white text-2xl transition-transform duration-150;
+    box-shadow: var(--shadow-card-sm);
+  }
+
+  .swipe-deck__action:active {
+    transform: scale(0.9);
+  }
+
+  .swipe-deck__action--discard {
+    @apply text-neutral;
+  }
+
+  .swipe-deck__action--keep {
+    @apply border-sage text-sage;
+  }
+
+  .swipe-deck__action--disabled {
+    @apply cursor-not-allowed border-border text-border opacity-60;
+  }
+
+  .swipe-deck__hint {
+    @apply mt-3 text-center text-xs text-neutral;
+  }
+
+  .swipe-deck--complete {
+    @apply mx-auto flex max-w-sm flex-col items-center gap-3 rounded-2xl border border-sage/40 bg-white px-8 py-14 text-center;
+    box-shadow: var(--shadow-card);
+  }
+
+  .swipe-deck__complete-badge {
+    @apply flex h-14 w-14 items-center justify-center rounded-full bg-sage text-2xl font-bold text-white;
+  }
+
+  .swipe-deck__complete-title {
+    @apply font-serif text-2xl text-petrol;
+  }
+
+  .swipe-deck__complete-lead {
+    @apply text-sm text-neutral-body;
+  }
+
+  .swipe-deck__complete-tray {
+    @apply mt-2 flex flex-wrap justify-center gap-2;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .swipe-deck__recipe-card--refused {
+      animation: none;
+    }
+  }
+}

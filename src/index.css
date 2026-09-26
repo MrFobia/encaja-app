@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+/*
+  Encaja — design tokens
+  Tomados 1:1 del mockup de referencia (encaja-prueba-tecnica-uxui.html).
+  No inventar colores nuevos: el rojo --color-allergy es de uso EXCLUSIVO
+  para bloqueo por alergia, nunca para "descartar por gusto".
+*/
+@theme {
+  --color-terracotta: #e8623d;
+  --color-terracotta-dark: #a83d18;
+  --color-sage: #4f7a5a;
+  --color-sage-light: #8fae8b;
+  --color-cream: #faf6f1;
+  --color-cream-2: #f3ebe0;
+  --color-petrol: #1f3a3d;
+  --color-ink: #221f1a;
+  --color-allergy: #c23b22;
+  --color-border: #e7dccb;
+  --color-neutral: #6b6459;
+  --color-neutral-body: #4b463d;
+
+  --font-serif: "Petrona", Georgia, serif;
+  --font-sans: "Work Sans", system-ui, sans-serif;
+
+  --shadow-card: 0 12px 32px -14px rgba(31, 58, 61, 0.22);
+  --shadow-card-sm: 0 4px 14px -8px rgba(31, 58, 61, 0.25);
+
+  --radius-card: 18px;
+  --radius-card-sm: 10px;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-serif);
+    color: var(--color-petrol);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  button {
+    font-family: var(--font-sans);
+  }
+
+  :focus-visible {
+    outline: 2.5px solid var(--color-terracotta-dark);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .wrap {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  /* Cada página remonta su `.wrap` raíz al navegar (Route distinto = nuevo
+     componente); NavBar no remonta, así que no repite el fade. Sin JS,
+     sin AnimatePresence a nivel de ruta, y desactivado limpio por media query. */
+  @media (prefers-reduced-motion: no-preference) {
+    .wrap {
+      animation: page-fade-in 0.4s ease both;
+    }
+  }
+
+  @keyframes page-fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

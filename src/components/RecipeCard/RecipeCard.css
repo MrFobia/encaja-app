@@ -1,0 +1,126 @@
+@reference "../../index.css";
+@layer components {
+  .recipe-card {
+    @apply relative overflow-hidden rounded-2xl border border-border bg-white;
+    box-shadow: var(--shadow-card-sm);
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.2s;
+  }
+
+  .recipe-card__photo {
+    @apply relative flex h-[150px] items-end p-3;
+    background: linear-gradient(135deg, #e8865f, #c9773f);
+  }
+
+  .recipe-card__photo::after {
+    content: "";
+    @apply absolute inset-0;
+    background: linear-gradient(to top, rgba(20, 15, 10, 0.55), transparent 55%);
+  }
+
+  .recipe-card__image {
+    @apply absolute inset-0 h-full w-full object-cover;
+  }
+
+  .recipe-card__name {
+    @apply relative z-10 font-serif text-base font-semibold text-white;
+  }
+
+  .recipe-card__why {
+    @apply absolute right-2.5 top-2.5 z-20 rounded-full px-2.5 py-1 text-xs text-white backdrop-blur-sm;
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  .recipe-card__state-tag {
+    @apply absolute left-2.5 top-2.5 z-20 rounded-full bg-white/90 px-2.5 py-1 text-xs font-bold uppercase tracking-wide text-petrol;
+  }
+
+  .recipe-card__meta {
+    @apply flex gap-2 px-3.5 py-3 text-xs text-neutral;
+  }
+
+  .recipe-card__meta-item {
+    @apply rounded-full bg-cream-2 px-2 py-1;
+  }
+
+  .recipe-card__meta-item--warn {
+    @apply bg-allergy/10 font-bold text-allergy;
+  }
+
+  /* ---- Dragging: arrastrando con el dedo/mouse (tinte salvia + rotación via inline style del padre) ---- */
+  .recipe-card--dragging {
+    cursor: grabbing;
+  }
+
+  .recipe-card--dragging .recipe-card__photo::before {
+    content: "";
+    @apply absolute inset-0 z-[1];
+    background: rgba(79, 122, 90, 0.28);
+  }
+
+  .recipe-card--dragging .recipe-card__state-tag {
+    @apply bg-sage text-white;
+  }
+
+  /* ---- Kept: guardada con éxito ---- */
+  .recipe-card--kept {
+    border-color: var(--color-sage);
+    box-shadow: 0 0 0 3px rgba(79, 122, 90, 0.18);
+  }
+
+  .recipe-card--kept .recipe-card__state-tag {
+    @apply bg-sage text-white;
+  }
+
+  /* ---- Discarded: descartada por gusto (nunca rojo) ---- */
+  .recipe-card--discarded {
+    opacity: 0.55;
+  }
+
+  .recipe-card--discarded .recipe-card__photo {
+    filter: grayscale(0.5);
+  }
+
+  .recipe-card--discarded .recipe-card__state-tag {
+    @apply bg-neutral text-white;
+  }
+
+  /* ---- Blocked: bloqueada por alergia. Único estado que usa el rojo alérgeno. ---- */
+  .recipe-card--blocked .recipe-card__photo {
+    filter: grayscale(0.7) brightness(0.75);
+  }
+
+  .recipe-card--blocked .recipe-card__state-tag {
+    @apply bg-allergy text-white;
+  }
+
+  /* ---- Loading: buscando reemplazo tras un descarte ---- */
+  .recipe-card--loading .recipe-card__photo {
+    background: linear-gradient(100deg, #ede3d6 30%, #f7f1e6 50%, #ede3d6 70%);
+    background-size: 200% 100%;
+    animation: recipe-card-shimmer 1.4s infinite;
+  }
+
+  .recipe-card--loading .recipe-card__name {
+    color: transparent;
+  }
+
+  .recipe-card--loading .recipe-card__state-tag {
+    @apply bg-cream-2 text-neutral;
+  }
+
+  @keyframes recipe-card-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .recipe-card--loading .recipe-card__photo {
+      animation: none;
+      background: linear-gradient(135deg, #ede3d6, #f7f1e6);
+    }
+  }
+}

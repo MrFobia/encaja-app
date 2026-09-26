@@ -1,0 +1,38 @@
+@reference "../index.css";
+@layer components {
+  .system-page {
+    @apply max-w-4xl py-16;
+  }
+
+  .system-page__title {
+    @apply mt-1 text-3xl;
+  }
+
+  .system-page__lead {
+    @apply mt-3 max-w-[65ch] text-[15.5px] text-neutral-body;
+  }
+
+  .system-page__lead code {
+    @apply rounded bg-cream-2 px-1.5 py-0.5 font-mono text-[13px];
+  }
+
+  .system-page__grid {
+    @apply mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .system-page__cell {
+    margin: 0;
+  }
+
+  .system-page__caption {
+    @apply mt-3 text-sm text-neutral-body;
+  }
+
+  .system-page__modifier {
+    @apply block font-mono text-xs text-terracotta-dark;
+  }
+
+  .system-page__caption p {
+    @apply mt-1;
+  }
+}

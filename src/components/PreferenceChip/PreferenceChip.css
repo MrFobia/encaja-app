@@ -1,0 +1,30 @@
+@reference "../../index.css";
+@layer components {
+  .preference-chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-2 text-sm font-medium text-petrol transition-colors duration-150;
+  }
+
+  .preference-chip:hover {
+    @apply border-terracotta-dark/40;
+  }
+
+  .preference-chip__icon {
+    @apply text-xs;
+  }
+
+  /* ---- Preferencia blanda (gusto): terracota cuando activa ---- */
+  .preference-chip--preference.preference-chip--active {
+    @apply border-terracotta bg-terracotta/10 text-terracotta-dark;
+  }
+
+  /* ---- Alergia (seguridad): rojo real, exclusivo de este contexto ---- */
+  .preference-chip--allergy.preference-chip--active {
+    border-color: rgba(194, 59, 34, 0.45);
+    background: rgba(194, 59, 34, 0.1);
+    color: var(--color-allergy);
+  }
+
+  .preference-chip--allergy .preference-chip__icon {
+    @apply font-bold;
+  }
+}

@@ -1,0 +1,102 @@
+@reference "../index.css";
+@layer components {
+  .home-hero {
+    @apply grid grid-cols-1 items-center gap-10 py-16 md:grid-cols-[1.1fr_0.9fr];
+  }
+
+  .home-hero__title {
+    @apply mt-3 text-[clamp(2.4rem,6vw,4rem)] leading-[1.04] tracking-tight;
+  }
+
+  .home-hero__title em {
+    @apply font-normal not-italic text-terracotta;
+  }
+
+  .home-hero__lead {
+    @apply mt-5 max-w-[560px] text-lg text-neutral-body;
+  }
+
+  .home-hero__pills {
+    @apply mt-8 flex flex-wrap gap-3.5;
+  }
+
+  .home-hero__pill {
+    @apply rounded-xl border border-border bg-white px-4 py-3 text-sm;
+    box-shadow: var(--shadow-card-sm);
+    max-width: 220px;
+  }
+
+  .home-hero__pill b {
+    @apply block font-serif text-[15px] font-semibold text-petrol;
+  }
+
+  .home-hero__pill span {
+    @apply text-neutral;
+  }
+
+  .home-hero__actions {
+    @apply mt-9 flex flex-wrap items-center gap-4;
+  }
+
+  .home-hero__cta {
+    @apply rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white transition-transform duration-150;
+    box-shadow: 0 10px 24px -10px rgba(232, 98, 61, 0.55);
+  }
+
+  .home-hero__cta:hover {
+    transform: translateY(-1px);
+  }
+
+  .home-hero__secondary {
+    @apply text-sm font-semibold text-neutral underline decoration-dotted;
+  }
+
+  .home-hero__visual {
+    @apply flex justify-center;
+  }
+
+  /* Mismas dimensiones que .hero-3d (definida en Hero3D.css, que llega en su
+     propio chunk lazy): evita salto de layout mientras ese chunk carga. */
+  .home-hero__visual-loading {
+    @apply relative aspect-square w-full max-w-[420px] overflow-hidden rounded-[28px] bg-cream-2;
+    animation: home-hero-visual-pulse 1.6s ease-in-out infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-hero__visual-loading {
+      animation: none;
+    }
+  }
+
+  @keyframes home-hero-visual-pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.72;
+    }
+  }
+
+  .home-steps {
+    @apply col-span-full mt-6 grid grid-cols-1 gap-5 border-t border-border pt-12 sm:grid-cols-3;
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .home-steps__step {
+    @apply flex items-start gap-4;
+  }
+
+  .home-steps__number {
+    @apply flex h-9 w-9 flex-none items-center justify-center rounded-full border-2 border-terracotta font-serif text-sm font-bold text-terracotta-dark;
+  }
+
+  .home-steps__title {
+    @apply text-lg;
+  }
+
+  .home-steps__body {
+    @apply mt-1 text-sm text-neutral-body;
+  }
+}
