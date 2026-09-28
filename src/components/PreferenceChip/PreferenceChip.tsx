@@ -1,51 +1,33 @@
+import { ALLERGEN_ICONS, Check, Plus, Shield } from "../Icons";
 import "./PreferenceChip.css";
 
 export interface PreferenceChipProps {
   label: string;
   active: boolean;
-  /** "allergy" = chip duro (rojo cuando activo). "preference" = chip blando (terracota cuando activo). */
+  /** "allergy" = restricción dura (anillo rojo al activarse). "preference" = gusto (nunca rojo). */
   variant: "allergy" | "preference";
   onToggle: () => void;
   helper?: string;
   id?: string;
 }
 
-/**
- * Bloque BEM `.preference-chip`. Los chips de alergia son restricciones de
- * seguridad (rojo real, exclusivo de este contexto); los de preferencia son
- * gusto (terracota). Nunca se intercambian los colores entre uno y otro.
- */
-export function PreferenceChip({
-  label,
-  active,
-  variant,
-  onToggle,
-  helper,
-  id,
-}: PreferenceChipProps) {
-  const rootClass = [
-    "preference-chip",
-    `preference-chip--${variant}`,
-    active ? "preference-chip--active" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
+export function PreferenceChip({ label, active, variant, onToggle, helper, id }: PreferenceChipProps) {
+  const Icon = active
+    ? variant === "allergy"
+      ? Shield
+      : Check
+    : (variant === "allergy" && id && ALLERGEN_ICONS[id]) || Plus;
   return (
     <button
       type="button"
       id={id}
-      className={rootClass}
+      className={`pchip pchip--${variant} ${active ? "is-on" : ""}`}
       aria-pressed={active}
       title={helper}
       onClick={onToggle}
     >
-      {variant === "allergy" && (
-        <span className="preference-chip__icon" aria-hidden="true">
-          {active ? "⊘" : "+"}
-        </span>
-      )}
-      <span className="preference-chip__label">{label}</span>
+      <Icon className="pchip__icon" />
+      <span>{label}</span>
     </button>
   );
 }

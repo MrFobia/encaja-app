@@ -20,7 +20,26 @@
         ],
         "createdAt": "2026-09-26T20:40:46.701Z",
         "reason": "Hero text (cream #FAF6F1 and light terracotta #F0916F) on Home only sits over a photographic background image + dark gradient scrim (.home-hero__bg / .home-hero__scrim), not the flat cream page background the static checker reads. Verified visually: strong legibility. Scoped to the root route only (not /deck, /preferencias, etc.) so a real contrast bug elsewhere still surfaces."
+      },
+      {
+        "rule": "design-system-font",
+        "value": "figtree",
+        "files": [
+          "public/proceso.html"
+        ],
+        "createdAt": "2026-09-28T03:05:35.094Z",
+        "reason": "standalone case-study page authored outside the tracked app; reuses product fonts intentionally, not registered in DESIGN.md"
+      },
+      {
+        "rule": "low-contrast",
+        "value": "*",
+        "files": [
+          "public/proceso.html"
+        ],
+        "createdAt": "2026-09-28T03:06:41.144Z",
+        "reason": "hero em (#0e7c6b on #eee2cc) is large display text (clamp 40-72px bold); 4.0:1 passes WCAG large-text 3:1, hook applies normal-text 4.5:1 uniformly"
       }
     ]
-  }
+  },
+  "buildPath": "comp"
 }

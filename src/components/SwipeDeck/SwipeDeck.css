@@ -1,170 +1,337 @@
-@reference "../../index.css";
 @layer components {
   .swipe-deck {
-    @apply mx-auto flex w-full max-w-sm flex-col items-center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 26px;
   }
 
+  /* Bandeja de progreso: 5 huecos que se llenan con piezas */
   .swipe-deck__progress {
-    @apply mb-6 flex w-full items-center gap-3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
   }
 
-  .swipe-deck__progress-track {
-    @apply h-2 flex-1 overflow-hidden rounded-full bg-cream-2;
+  .swipe-deck__tray {
+    list-style: none;
+    margin: 0;
+    padding: 16px 30px 14px 20px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0 16px;
+    width: min(100%, 640px);
+    border-radius: 22px;
+    background: rgb(43 22 56 / 0.08);
   }
 
-  .swipe-deck__progress-fill {
-    @apply h-full w-full origin-left rounded-full bg-sage transition-transform duration-300 ease-out;
+  .swipe-deck__tray-slot {
+    position: relative;
   }
 
   .swipe-deck__progress-label {
-    @apply whitespace-nowrap text-xs font-semibold text-neutral;
+    font-size: 15px;
+    font-weight: 700;
   }
 
   .swipe-deck__stage {
-    /* El card queda en flujo normal (centrado por flex); framer-motion
-       escribe `transform` inline para x/rotate, así que evitamos cualquier
-       utilidad de Tailwind que también dependa de `transform` (translate,
-       scale-por-clase) en este contenedor para no pisarnos el gesto. */
-    @apply relative flex h-[448px] w-full flex-col items-center;
-    padding-top: 24px;
+    position: relative;
+    margin-top: 56px;
+    width: min(100% - 56px, 420px);
+    display: grid;
   }
 
   .swipe-deck__behind {
-    @apply absolute h-[400px] w-[88%] rounded-[22px];
-    top: 40px;
-    left: 6%;
-    background: #e3d8c6;
-    z-index: 0;
+    grid-area: 1 / 1;
+    align-self: start;
+    margin: 18px 12% 0;
+    aspect-ratio: 840 / 705;
+    border-radius: 28px;
+    background: rgb(43 22 56 / 0.1);
+    transform: rotate(3deg);
   }
 
   .swipe-deck__card {
-    @apply relative h-[400px] w-full cursor-grab touch-none select-none outline-none;
-    z-index: 1;
+    grid-area: 1 / 1;
+    position: relative;
+    touch-action: pan-y;
+    cursor: grab;
+    border-radius: 24px;
   }
 
   .swipe-deck__card:active {
     cursor: grabbing;
   }
 
-  .swipe-deck__card .recipe-card {
-    @apply h-full;
-    box-shadow: 0 18px 34px -16px rgba(0, 0, 0, 0.35);
-  }
-
-  .swipe-deck__card .recipe-card__photo {
-    height: 100%;
-  }
-
-  .swipe-deck__recipe-card--refused {
-    animation: swipe-deck-shake 0.4s ease;
-  }
-
-  @keyframes swipe-deck-shake {
-    0%,
-    100% {
-      transform: translateX(0);
-    }
-    25% {
-      transform: translateX(-6px);
-    }
-    75% {
-      transform: translateX(6px);
-    }
-  }
-
   .swipe-deck__stamp {
-    @apply absolute top-6 z-20 rounded-lg border-[3px] px-3.5 py-1.5 font-serif text-lg font-bold uppercase tracking-wide;
+    position: absolute;
+    top: 22%;
+    z-index: 3;
+    padding: 6px 16px;
+    border-radius: 12px;
+    font-family: var(--font-display);
+    font-size: 30px;
+    line-height: 1.1;
+    pointer-events: none;
   }
 
   .swipe-deck__stamp--keep {
-    @apply left-5 border-sage text-sage;
-    transform: rotate(-14deg);
+    left: 6%;
+    background: var(--color-teal);
+    color: #fff;
+    transform: rotate(-10deg);
   }
 
   .swipe-deck__stamp--pass {
-    @apply right-5 border-neutral text-neutral;
-    transform: rotate(14deg);
+    right: 6%;
+    background: var(--color-berenjena);
+    color: var(--color-maiz);
+    transform: rotate(10deg);
+  }
+
+  .swipe-deck__recipe-card--refused {
+    animation: deck-refuse 380ms var(--ease-out);
+  }
+
+  @keyframes deck-refuse {
+    20% {
+      transform: translateX(10px);
+    }
+    45% {
+      transform: translateX(-8px);
+    }
+    70% {
+      transform: translateX(5px);
+    }
   }
 
   .swipe-deck__detail {
-    @apply mt-3 w-full text-center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .swipe-deck__detail-toggle {
-    @apply text-sm font-semibold text-terracotta-dark underline decoration-dotted;
-  }
-
-  .swipe-deck__detail-panel {
-    @apply mt-2 rounded-xl border border-border bg-white p-3 text-left text-sm text-ink;
-  }
-
-  .swipe-deck__detail-tags {
-    @apply mt-1 flex flex-wrap gap-1.5 text-xs text-neutral;
-    list-style: none;
-    padding: 0;
-  }
-
-  .swipe-deck__detail-tags li {
-    @apply rounded-full bg-cream-2 px-2 py-0.5;
-  }
-
-  .swipe-deck__detail-warn {
-    @apply mt-2 font-semibold text-allergy;
+    background: none;
+    border: 0;
+    font-size: 16px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+    cursor: pointer;
+    padding: 6px;
   }
 
   .swipe-deck__actions {
-    @apply mt-4 flex items-center justify-center gap-4;
+    display: flex;
+    gap: 22px;
   }
 
   .swipe-deck__action {
-    @apply flex h-14 w-14 items-center justify-center rounded-full border-[1.5px] border-border bg-white text-2xl transition-transform duration-150;
-    box-shadow: var(--shadow-card-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 64px;
+    padding: 0 28px 0 22px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      transform 140ms var(--ease-out),
+      background-color 180ms ease;
+  }
+
+  .swipe-deck__action svg {
+    width: 24px;
+    height: 24px;
   }
 
   .swipe-deck__action:active {
-    transform: scale(0.9);
+    transform: scale(0.96);
   }
 
   .swipe-deck__action--discard {
-    @apply text-neutral;
+    background: transparent;
+    color: var(--color-berenjena);
+    box-shadow: inset 0 0 0 2.5px var(--color-berenjena);
   }
 
   .swipe-deck__action--keep {
-    @apply border-sage text-sage;
+    background: var(--color-teal);
+    color: #fff;
+    box-shadow: 0 10px 20px -12px rgb(10 95 82 / 0.9);
   }
 
   .swipe-deck__action--disabled {
-    @apply cursor-not-allowed border-border text-border opacity-60;
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .swipe-deck__action--discard:hover {
+      background: rgb(43 22 56 / 0.08);
+    }
+    .swipe-deck__action--keep:not(.swipe-deck__action--disabled):hover {
+      background: var(--color-teal-deep);
+    }
   }
 
   .swipe-deck__hint {
-    @apply mt-3 text-center text-xs text-neutral;
+    font-size: 15px;
+    color: var(--color-ink-soft);
+    text-align: center;
   }
 
+  /* Mazo completo */
   .swipe-deck--complete {
-    @apply mx-auto flex max-w-sm flex-col items-center gap-3 rounded-2xl border border-sage/40 bg-white px-8 py-14 text-center;
-    box-shadow: var(--shadow-card);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 48px 64px;
+    width: 100%;
+  }
+
+  .swipe-deck__complete-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
   .swipe-deck__complete-badge {
-    @apply flex h-14 w-14 items-center justify-center rounded-full bg-sage text-2xl font-bold text-white;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 20px;
+    background: var(--color-teal);
+    color: #fff;
+  }
+
+  .swipe-deck__complete-badge svg {
+    width: 34px;
+    height: 34px;
   }
 
   .swipe-deck__complete-title {
-    @apply font-serif text-2xl text-petrol;
+    font-size: clamp(44px, 5vw, 76px);
   }
 
   .swipe-deck__complete-lead {
-    @apply text-sm text-neutral-body;
+    max-width: 40ch;
+    font-size: 19px;
+  }
+
+  .swipe-deck__complete-redirect {
+    margin-top: -12px;
+    font-size: 14px;
+    color: var(--color-ink-soft);
   }
 
   .swipe-deck__complete-tray {
-    @apply mt-2 flex flex-wrap justify-center gap-2;
+    list-style: none;
+    margin: 0;
+    padding: 40px 60px 36px 36px;
+    border-radius: 36px;
+    background: var(--color-berenjena);
+    box-shadow: var(--shadow-lift);
+    display: flex;
+    flex-direction: column;
+    transform: rotate(-2deg);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .swipe-deck__recipe-card--refused {
-      animation: none;
+  .swipe-deck__complete-tray li {
+    position: relative;
+  }
+
+  .swipe-deck__complete-tray li:nth-child(1) {
+    z-index: 5;
+  }
+  .swipe-deck__complete-tray li:nth-child(2) {
+    z-index: 4;
+  }
+  .swipe-deck__complete-tray li:nth-child(3) {
+    z-index: 3;
+  }
+  .swipe-deck__complete-tray li:nth-child(4) {
+    z-index: 2;
+  }
+
+  /* Mazo agotado sin llegar a 5: cada pieza guardada se puede repetir */
+  .swipe-deck__repeat {
+    all: unset;
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    border-radius: var(--radius-piece);
+    transition: transform 160ms var(--ease-out);
+  }
+
+  .swipe-deck__repeat:active {
+    transform: scale(0.97);
+  }
+
+  .swipe-deck__repeat:focus-visible {
+    outline: 3px solid var(--color-maiz);
+    outline-offset: 4px;
+  }
+
+  .swipe-deck__repeat-badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-pill);
+    background: var(--color-teal);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    box-shadow: 0 4px 10px rgb(14 124 107 / 0.4);
+    transform: scale(0.9);
+    opacity: 0.92;
+    transition:
+      transform 160ms var(--ease-out),
+      opacity 160ms var(--ease-out),
+      background-color 160ms var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .swipe-deck__repeat:hover .swipe-deck__repeat-badge {
+      transform: scale(1.08);
+      opacity: 1;
+      background: var(--color-teal-deep);
+    }
+  }
+
+  .swipe-deck__repeat:active .swipe-deck__repeat-badge {
+    transform: scale(0.85);
+  }
+
+  @media (max-width: 860px) {
+    .swipe-deck--complete {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .swipe-deck__action {
+      padding: 0 22px 0 18px;
+    }
+    .swipe-deck__tray {
+      gap: 0 8px;
+      padding: 12px 20px 10px 12px;
     }
   }
 }

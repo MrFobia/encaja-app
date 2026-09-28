@@ -1,38 +1,51 @@
-@reference "../index.css";
 @layer components {
   .system-page {
-    @apply max-w-4xl py-16;
+    padding-top: clamp(36px, 5vw, 72px);
+    padding-bottom: clamp(56px, 8vw, 110px);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
   .system-page__title {
-    @apply mt-1 text-3xl;
+    font-size: clamp(40px, 5vw, 72px);
   }
 
   .system-page__lead {
-    @apply mt-3 max-w-[65ch] text-[15.5px] text-neutral-body;
+    max-width: 56ch;
+    font-size: 18px;
   }
 
-  .system-page__lead code {
-    @apply rounded bg-cream-2 px-1.5 py-0.5 font-mono text-[13px];
+  .system-page__lead code,
+  .system-page__modifier {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.9em;
   }
 
   .system-page__grid {
-    @apply mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    gap: 80px 48px;
+    margin-top: 60px;
   }
 
   .system-page__cell {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
   .system-page__caption {
-    @apply mt-3 text-sm text-neutral-body;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 15px;
+    color: var(--color-ink-soft);
   }
 
   .system-page__modifier {
-    @apply block font-mono text-xs text-terracotta-dark;
-  }
-
-  .system-page__caption p {
-    @apply mt-1;
+    color: var(--color-berenjena);
+    font-weight: 700;
   }
 }

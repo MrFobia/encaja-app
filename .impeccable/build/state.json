@@ -1,0 +1,121 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-26T21:06:36.773Z",
+  "comp": ".impeccable/mocks/comp-c.png",
+  "direction": "6d6f3ee8",
+  "breakpoint": "1586x992",
+  "artifact": null,
+  "phase": "plates",
+  "phases": {
+    "comps": {
+      "status": "closed",
+      "openedAt": "2026-09-26T21:06:36.772Z",
+      "closedAt": "2026-09-26T21:11:35.475Z",
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "3 comps, 1 approved",
+        "approved": ".impeccable/mocks/comp-c.png",
+        "at": "2026-09-26T21:11:35.475Z"
+      },
+      "forced": null
+    },
+    "spec": {
+      "status": "closed",
+      "openedAt": "2026-09-26T21:11:35.494Z",
+      "closedAt": "2026-09-26T21:16:19.048Z",
+      "attempts": 5,
+      "notes": [],
+      "gate": {
+        "ok": true,
+        "reasons": [],
+        "summary": "26 regions, 3 plates, 11 text regions measured",
+        "at": "2026-09-26T21:16:19.047Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "open",
+      "openedAt": "2026-09-26T21:16:19.048Z",
+      "closedAt": null,
+      "attempts": 2,
+      "notes": [],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "plate assets/plates/piece-stack.png: structure 29% against the comp region piece-stack: the composition of the plate is not the region's (different subject, orientation, or crop); regenerate with comp-spec.mjs --crop piece-stack as the reference image",
+          "plate assets/plates/piece-blocked.png: structure 38% against the comp region piece-blocked: the composition of the plate is not the region's (different subject, orientation, or crop); regenerate with comp-spec.mjs --crop piece-blocked as the reference image"
+        ],
+        "summary": "3/3 plates",
+        "at": "2026-09-26T21:18:43.884Z"
+      },
+      "forced": null
+    },
+    "hero": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null,
+  "plates": {
+    "bowl-piece": {
+      "status": "ok",
+      "score": 0.4612,
+      "size": "1160x1025"
+    },
+    "piece-stack": {
+      "status": "ok",
+      "score": 0.4905,
+      "size": "1148x1535"
+    },
+    "piece-blocked": {
+      "status": "ok",
+      "score": 0.5797,
+      "size": "1148x503"
+    }
+  }
+}

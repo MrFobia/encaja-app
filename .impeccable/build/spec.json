@@ -1,0 +1,1395 @@
+{
+  "tool": "comp-spec",
+  "version": 1,
+  "createdAt": "2026-09-26T21:18:43.602Z",
+  "comp": ".impeccable/mocks/comp-c.png",
+  "warnings": [
+    "region logo: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region burst-top: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region burst-bowl: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region panel: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region panel: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)",
+    "region piece-stack: \"container\": true set in the regions file (the region-size refusal is overridden: one undivided element)",
+    "region piece-stack: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region piece-blocked: \"bleed\": true set in the regions file (the clipped-artwork refusal is overridden: the page crops it there)",
+    "region steps-band: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region step-1: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region step-2: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)",
+    "region step-3: \"codeDrawn\": true set in the regions file (the painted-material refusal is overridden: code draws this region)"
+  ],
+  "uncoveredInkCells": [],
+  "compSize": {
+    "width": 1586,
+    "height": 992
+  },
+  "aspect": 1.5988,
+  "orientation": "landscape",
+  "palette": [
+    {
+      "hex": "#f8d732",
+      "coverage": 0.4746
+    },
+    {
+      "hex": "#2f1935",
+      "coverage": 0.3652
+    },
+    {
+      "hex": "#f2dfc5",
+      "coverage": 0.0788
+    },
+    {
+      "hex": "#b9a8f8",
+      "coverage": 0.0471
+    },
+    {
+      "hex": "#150b10",
+      "coverage": 0.0343
+    }
+  ],
+  "bands": [
+    {
+      "y": 0.0375,
+      "strength": 0.237
+    },
+    {
+      "y": 0.075,
+      "strength": 0.3653
+    },
+    {
+      "y": 0.125,
+      "strength": 0.2376
+    },
+    {
+      "y": 0.1875,
+      "strength": 0.5423
+    },
+    {
+      "y": 0.2125,
+      "strength": 0.2247
+    },
+    {
+      "y": 0.275,
+      "strength": 0.4657
+    },
+    {
+      "y": 0.3125,
+      "strength": 0.5376
+    },
+    {
+      "y": 0.3375,
+      "strength": 0.2087
+    },
+    {
+      "y": 0.3875,
+      "strength": 0.4004
+    },
+    {
+      "y": 0.4625,
+      "strength": 0.278
+    },
+    {
+      "y": 0.5,
+      "strength": 0.2381
+    },
+    {
+      "y": 0.5375,
+      "strength": 0.4739
+    },
+    {
+      "y": 0.6125,
+      "strength": 0.3453
+    },
+    {
+      "y": 0.6375,
+      "strength": 0.2724
+    },
+    {
+      "y": 0.825,
+      "strength": 0.8569
+    },
+    {
+      "y": 0.85,
+      "strength": 0.3216
+    },
+    {
+      "y": 0.9,
+      "strength": 0.3799
+    },
+    {
+      "y": 0.925,
+      "strength": 0.3422
+    },
+    {
+      "y": 0.9625,
+      "strength": 0.3759
+    }
+  ],
+  "regions": [
+    {
+      "id": "logo",
+      "kind": "chrome",
+      "note": "encaja wordmark, chunky heavy lowercase, aubergine, j with square dot",
+      "grid": "A0:B0",
+      "codeDrawn": true,
+      "box": {
+        "x": 0,
+        "y": 0,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 0,
+        "y": 0,
+        "w": 317,
+        "h": 99
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#f8d837",
+          "coverage": 0.7856
+        },
+        {
+          "hex": "#25162d",
+          "coverage": 0.1899
+        },
+        {
+          "hex": "#81662d",
+          "coverage": 0.0088
+        },
+        {
+          "hex": "#e1bb42",
+          "coverage": 0.0082
+        },
+        {
+          "hex": "#49342c",
+          "coverage": 0.0076
+        }
+      ],
+      "detail": {
+        "energy": 22.3334
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "nav-links",
+      "kind": "text",
+      "note": "nav links Cómo funciona, Recetas, Alergias in aubergine UI sans",
+      "grid": "C0:E0",
+      "coverBox": {
+        "x": 0.2,
+        "y": 0,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.2377,
+        "y": 0.0363,
+        "w": 0.087,
+        "h": 0.0302
+      },
+      "px": {
+        "x": 377,
+        "y": 36,
+        "w": 138,
+        "h": 30
+      },
+      "aspect": 4.6,
+      "palette": [
+        {
+          "hex": "#f7d838",
+          "coverage": 0.8402
+        },
+        {
+          "hex": "#69562d",
+          "coverage": 0.0571
+        },
+        {
+          "hex": "#d3b43b",
+          "coverage": 0.0479
+        },
+        {
+          "hex": "#bd9638",
+          "coverage": 0.032
+        },
+        {
+          "hex": "#080a20",
+          "coverage": 0.0228
+        }
+      ],
+      "detail": {
+        "energy": 30.9602
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "nav-cta",
+      "kind": "control",
+      "note": "lilac pill button Entrar",
+      "grid": "J0:J0",
+      "box": {
+        "x": 0.9,
+        "y": 0,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1427,
+        "y": 0,
+        "w": 159,
+        "h": 99
+      },
+      "aspect": 1.6061,
+      "palette": [
+        {
+          "hex": "#371939",
+          "coverage": 0.7215
+        },
+        {
+          "hex": "#b9a9f8",
+          "coverage": 0.2336
+        },
+        {
+          "hex": "#725888",
+          "coverage": 0.0357
+        },
+        {
+          "hex": "#917dc8",
+          "coverage": 0.0052
+        },
+        {
+          "hex": "#4d316a",
+          "coverage": 0.004
+        }
+      ],
+      "detail": {
+        "energy": 11.1854
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "burst-top",
+      "kind": "chrome",
+      "note": "three short aubergine motion tick strokes near the comma",
+      "grid": "E1:E1",
+      "codeDrawn": true,
+      "box": {
+        "x": 0.4,
+        "y": 0.1,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 634,
+        "y": 99,
+        "w": 159,
+        "h": 99
+      },
+      "aspect": 1.6061,
+      "palette": [
+        {
+          "hex": "#f8d837",
+          "coverage": 0.9063
+        },
+        {
+          "hex": "#26172d",
+          "coverage": 0.0741
+        },
+        {
+          "hex": "#7a6735",
+          "coverage": 0.0109
+        },
+        {
+          "hex": "#cea739",
+          "coverage": 0.0063
+        },
+        {
+          "hex": "#3c2c28",
+          "coverage": 0.0023
+        }
+      ],
+      "detail": {
+        "energy": 6.1529
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "headline",
+      "kind": "text",
+      "note": "Tu semana, first headline line, huge chunky heavy display, aubergine (second line encajada. continues below in the same face)",
+      "grid": "A1:E2",
+      "coverBox": {
+        "x": 0,
+        "y": 0.1,
+        "w": 0.5,
+        "h": 0.2
+      },
+      "box": {
+        "x": 0.1665,
+        "y": 0.1845,
+        "w": 0.3291,
+        "h": 0.1149
+      },
+      "px": {
+        "x": 264,
+        "y": 183,
+        "w": 522,
+        "h": 114
+      },
+      "aspect": 4.5789,
+      "palette": [
+        {
+          "hex": "#27172a",
+          "coverage": 0.5113
+        },
+        {
+          "hex": "#f8d837",
+          "coverage": 0.4531
+        },
+        {
+          "hex": "#776835",
+          "coverage": 0.0168
+        },
+        {
+          "hex": "#3e2c28",
+          "coverage": 0.0096
+        },
+        {
+          "hex": "#d1b132",
+          "coverage": 0.0092
+        }
+      ],
+      "detail": {
+        "energy": 39.9997
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "headline-2",
+      "kind": "text",
+      "note": "encajada. second headline line, same heavy display",
+      "grid": "A3:E3",
+      "coverBox": {
+        "x": 0,
+        "y": 0.3,
+        "w": 0.5,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0378,
+        "y": 0.3004,
+        "w": 0.4124,
+        "h": 0.0998
+      },
+      "px": {
+        "x": 60,
+        "y": 298,
+        "w": 654,
+        "h": 99
+      },
+      "aspect": 6.6061,
+      "palette": [
+        {
+          "hex": "#27172c",
+          "coverage": 0.593
+        },
+        {
+          "hex": "#f8d836",
+          "coverage": 0.3665
+        },
+        {
+          "hex": "#79612a",
+          "coverage": 0.0154
+        },
+        {
+          "hex": "#b39234",
+          "coverage": 0.0131
+        },
+        {
+          "hex": "#deb935",
+          "coverage": 0.0121
+        }
+      ],
+      "detail": {
+        "energy": 54.1354
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "subline",
+      "kind": "text",
+      "note": "Elige 5 recetas con un gesto. Lo que tiene tus alergias no entra. two lines aubergine UI sans",
+      "grid": "A4:D4",
+      "coverBox": {
+        "x": 0,
+        "y": 0.4,
+        "w": 0.4,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0454,
+        "y": 0.4304,
+        "w": 0.3216,
+        "h": 0.0696
+      },
+      "px": {
+        "x": 72,
+        "y": 427,
+        "w": 510,
+        "h": 69
+      },
+      "aspect": 7.3913,
+      "palette": [
+        {
+          "hex": "#f8d736",
+          "coverage": 0.7915
+        },
+        {
+          "hex": "#1d152d",
+          "coverage": 0.1124
+        },
+        {
+          "hex": "#cca637",
+          "coverage": 0.0383
+        },
+        {
+          "hex": "#35282f",
+          "coverage": 0.0369
+        },
+        {
+          "hex": "#9c7934",
+          "coverage": 0.0209
+        }
+      ],
+      "detail": {
+        "energy": 81.5038
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "cta",
+      "kind": "control",
+      "note": "deep teal pill button Arma tu caja with arrow",
+      "grid": "A5:C5",
+      "coverBox": {
+        "x": 0,
+        "y": 0.5,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0378,
+        "y": 0.5302,
+        "w": 0.2421,
+        "h": 0.0696
+      },
+      "px": {
+        "x": 60,
+        "y": 526,
+        "w": 384,
+        "h": 69
+      },
+      "aspect": 5.5652,
+      "palette": [
+        {
+          "hex": "#097869",
+          "coverage": 0.7702
+        },
+        {
+          "hex": "#f8d837",
+          "coverage": 0.1454
+        },
+        {
+          "hex": "#d3c848",
+          "coverage": 0.0377
+        },
+        {
+          "hex": "#ecf3f2",
+          "coverage": 0.0312
+        },
+        {
+          "hex": "#71aeae",
+          "coverage": 0.0156
+        }
+      ],
+      "detail": {
+        "energy": 23.4517
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "cta-link",
+      "kind": "text",
+      "note": "underlined text link Mantener la caja automática",
+      "grid": "A6:C6",
+      "coverBox": {
+        "x": 0,
+        "y": 0.6,
+        "w": 0.3,
+        "h": 0.1
+      },
+      "box": {
+        "x": 0.0454,
+        "y": 0.5998,
+        "w": 0.227,
+        "h": 0.0181
+      },
+      "px": {
+        "x": 72,
+        "y": 595,
+        "w": 360,
+        "h": 18
+      },
+      "aspect": 20,
+      "palette": [
+        {
+          "hex": "#f8d837",
+          "coverage": 0.5319
+        },
+        {
+          "hex": "#087868",
+          "coverage": 0.4639
+        },
+        {
+          "hex": "#78a858",
+          "coverage": 0.0028
+        },
+        {
+          "hex": "#b8b848",
+          "coverage": 0.0014
+        }
+      ],
+      "detail": {
+        "energy": 21.1168
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "bowl-piece",
+      "kind": "image",
+      "note": "loose die-cut speckled card piece with tabs holding a chickpea bowl photo, tilted, on yellow",
+      "grid": "D5:F8",
+      "box": {
+        "x": 0.3,
+        "y": 0.5,
+        "w": 0.3,
+        "h": 0.4
+      },
+      "px": {
+        "x": 476,
+        "y": 496,
+        "w": 476,
+        "h": 397
+      },
+      "aspect": 1.199,
+      "palette": [
+        {
+          "hex": "#f8ce29",
+          "coverage": 0.3742
+        },
+        {
+          "hex": "#eedec8",
+          "coverage": 0.2471
+        },
+        {
+          "hex": "#311934",
+          "coverage": 0.1639
+        },
+        {
+          "hex": "#b8a8f8",
+          "coverage": 0.1458
+        },
+        {
+          "hex": "#b67508",
+          "coverage": 0.069
+        }
+      ],
+      "detail": {
+        "energy": 39.6211
+      },
+      "medium": "raster",
+      "plate": "assets/plates/bowl-piece.png",
+      "text": null
+    },
+    {
+      "id": "burst-bowl",
+      "kind": "chrome",
+      "note": "three short aubergine motion tick strokes by the bowl piece",
+      "grid": "F5:F5",
+      "codeDrawn": true,
+      "box": {
+        "x": 0.5,
+        "y": 0.5,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 793,
+        "y": 496,
+        "w": 159,
+        "h": 99
+      },
+      "aspect": 1.6061,
+      "palette": [
+        {
+          "hex": "#f8c928",
+          "coverage": 0.4704
+        },
+        {
+          "hex": "#321935",
+          "coverage": 0.4437
+        },
+        {
+          "hex": "#160c15",
+          "coverage": 0.0423
+        },
+        {
+          "hex": "#f0d6b5",
+          "coverage": 0.0305
+        },
+        {
+          "hex": "#c7a67a",
+          "coverage": 0.0131
+        }
+      ],
+      "detail": {
+        "energy": 14.2245
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "panel",
+      "kind": "chrome",
+      "note": "aubergine panel with an angled top-left corner, flat",
+      "grid": "F0:J8",
+      "codeDrawn": true,
+      "container": true,
+      "box": {
+        "x": 0.5,
+        "y": 0,
+        "w": 0.5,
+        "h": 0.9
+      },
+      "px": {
+        "x": 793,
+        "y": 0,
+        "w": 793,
+        "h": 893
+      },
+      "aspect": 0.888,
+      "palette": [
+        {
+          "hex": "#321937",
+          "coverage": 0.7044
+        },
+        {
+          "hex": "#f8d22a",
+          "coverage": 0.1289
+        },
+        {
+          "hex": "#f0dcc3",
+          "coverage": 0.073
+        },
+        {
+          "hex": "#160a0f",
+          "coverage": 0.0687
+        },
+        {
+          "hex": "#b8a8f8",
+          "coverage": 0.0249
+        }
+      ],
+      "detail": {
+        "energy": 42.8246
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "chips",
+      "kind": "control",
+      "note": "row of 4 allergy chips: Sin mariscos active lilac fill red outline shield icon, Sin gluten, Sin lácteos, Sin frutos secos outlined",
+      "grid": "F0:J1",
+      "box": {
+        "x": 0.5,
+        "y": 0,
+        "w": 0.5,
+        "h": 0.2
+      },
+      "px": {
+        "x": 793,
+        "y": 0,
+        "w": 793,
+        "h": 198
+      },
+      "aspect": 4.0051,
+      "palette": [
+        {
+          "hex": "#371b3b",
+          "coverage": 0.844
+        },
+        {
+          "hex": "#ead6f6",
+          "coverage": 0.0526
+        },
+        {
+          "hex": "#f8d62a",
+          "coverage": 0.0507
+        },
+        {
+          "hex": "#f5f1ea",
+          "coverage": 0.0291
+        },
+        {
+          "hex": "#b9a9f8",
+          "coverage": 0.0236
+        }
+      ],
+      "detail": {
+        "energy": 26.7674
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "counter",
+      "kind": "text",
+      "note": "7 de 8 big chunky display white, recetas disponibles lilac sans",
+      "grid": "G1:I2",
+      "box": {
+        "x": 0.6,
+        "y": 0.1,
+        "w": 0.3,
+        "h": 0.2
+      },
+      "px": {
+        "x": 952,
+        "y": 99,
+        "w": 476,
+        "h": 198
+      },
+      "aspect": 2.404,
+      "palette": [
+        {
+          "hex": "#341838",
+          "coverage": 0.8147
+        },
+        {
+          "hex": "#f5f1ea",
+          "coverage": 0.0786
+        },
+        {
+          "hex": "#f2d9ac",
+          "coverage": 0.0414
+        },
+        {
+          "hex": "#ebd7f5",
+          "coverage": 0.0395
+        },
+        {
+          "hex": "#130b0b",
+          "coverage": 0.0258
+        }
+      ],
+      "detail": {
+        "energy": 51.7544
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "piece-stack",
+      "kind": "image",
+      "note": "vertical column of 5 interlocking die-cut speckled card recipe pieces with food photos (pasta, teriyaki salmon, curry, empty dashed slot where the ceviche was, grilled chicken bowl), each a separate piece built in code from a recipe photo",
+      "grid": "F2:H8",
+      "container": true,
+      "bleed": true,
+      "box": {
+        "x": 0.5,
+        "y": 0.2,
+        "w": 0.3,
+        "h": 0.7
+      },
+      "px": {
+        "x": 793,
+        "y": 198,
+        "w": 476,
+        "h": 694
+      },
+      "aspect": 0.6859,
+      "palette": [
+        {
+          "hex": "#311933",
+          "coverage": 0.3991
+        },
+        {
+          "hex": "#f8d02a",
+          "coverage": 0.2667
+        },
+        {
+          "hex": "#f0ddc5",
+          "coverage": 0.1502
+        },
+        {
+          "hex": "#130a0e",
+          "coverage": 0.1307
+        },
+        {
+          "hex": "#b8a8f8",
+          "coverage": 0.0534
+        }
+      ],
+      "detail": {
+        "energy": 53.4045
+      },
+      "medium": "raster",
+      "plate": "assets/plates/piece-stack.png",
+      "text": null
+    },
+    {
+      "id": "label-1",
+      "kind": "text",
+      "note": "recipe name two lines white sans",
+      "grid": "I2:J2",
+      "box": {
+        "x": 0.8,
+        "y": 0.2,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1269,
+        "y": 198,
+        "w": 317,
+        "h": 99
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#331937",
+          "coverage": 0.9503
+        },
+        {
+          "hex": "#f3f1f3",
+          "coverage": 0.0225
+        },
+        {
+          "hex": "#5f4f5f",
+          "coverage": 0.011
+        },
+        {
+          "hex": "#c3b8c3",
+          "coverage": 0.0101
+        },
+        {
+          "hex": "#160816",
+          "coverage": 0.0061
+        }
+      ],
+      "detail": {
+        "energy": 23.6362
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "label-2",
+      "kind": "text",
+      "note": "Salmón teriyaki recipe name white",
+      "grid": "I3:J3",
+      "box": {
+        "x": 0.8,
+        "y": 0.3,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1269,
+        "y": 298,
+        "w": 317,
+        "h": 99
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#2d1836",
+          "coverage": 0.9416
+        },
+        {
+          "hex": "#f2f1f2",
+          "coverage": 0.024
+        },
+        {
+          "hex": "#140816",
+          "coverage": 0.0179
+        },
+        {
+          "hex": "#605162",
+          "coverage": 0.0087
+        },
+        {
+          "hex": "#c9c2cd",
+          "coverage": 0.0078
+        }
+      ],
+      "detail": {
+        "energy": 26.0767
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "label-3",
+      "kind": "text",
+      "note": "Curry recipe name white",
+      "grid": "I4:J4",
+      "box": {
+        "x": 0.8,
+        "y": 0.4,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1269,
+        "y": 397,
+        "w": 317,
+        "h": 99
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#2d1836",
+          "coverage": 0.953
+        },
+        {
+          "hex": "#f3f1f3",
+          "coverage": 0.0162
+        },
+        {
+          "hex": "#140815",
+          "coverage": 0.0148
+        },
+        {
+          "hex": "#a095a3",
+          "coverage": 0.0084
+        },
+        {
+          "hex": "#d5ccd5",
+          "coverage": 0.0075
+        }
+      ],
+      "detail": {
+        "energy": 20.4735
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "piece-blocked",
+      "kind": "image",
+      "note": "ceviche die-cut piece greyed desaturated, pushed out of the column to the right, tilted",
+      "grid": "H5:I7",
+      "bleed": true,
+      "box": {
+        "x": 0.7,
+        "y": 0.5,
+        "w": 0.2,
+        "h": 0.3
+      },
+      "px": {
+        "x": 1110,
+        "y": 496,
+        "w": 317,
+        "h": 298
+      },
+      "aspect": 1.0638,
+      "palette": [
+        {
+          "hex": "#26142b",
+          "coverage": 0.5147
+        },
+        {
+          "hex": "#b1a2a2",
+          "coverage": 0.2175
+        },
+        {
+          "hex": "#e6ddd3",
+          "coverage": 0.0956
+        },
+        {
+          "hex": "#0d0909",
+          "coverage": 0.0885
+        },
+        {
+          "hex": "#706565",
+          "coverage": 0.0838
+        }
+      ],
+      "detail": {
+        "energy": 46.5959
+      },
+      "medium": "raster",
+      "plate": "assets/plates/piece-blocked.png",
+      "text": null
+    },
+    {
+      "id": "label-blocked",
+      "kind": "text",
+      "note": "Ceviche mixto white",
+      "grid": "J5:J5",
+      "box": {
+        "x": 0.9,
+        "y": 0.5,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1427,
+        "y": 496,
+        "w": 159,
+        "h": 99
+      },
+      "aspect": 1.6061,
+      "palette": [
+        {
+          "hex": "#2f1837",
+          "coverage": 0.9547
+        },
+        {
+          "hex": "#5c4c5f",
+          "coverage": 0.0161
+        },
+        {
+          "hex": "#f7f5f7",
+          "coverage": 0.0132
+        },
+        {
+          "hex": "#d4cbd8",
+          "coverage": 0.0092
+        },
+        {
+          "hex": "#150817",
+          "coverage": 0.0069
+        }
+      ],
+      "detail": {
+        "energy": 13.5299
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "allergy-tag",
+      "kind": "control",
+      "note": "red pill tag Contiene mariscos with no-entry icon",
+      "grid": "J6:J6",
+      "box": {
+        "x": 0.9,
+        "y": 0.6,
+        "w": 0.1,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1427,
+        "y": 595,
+        "w": 159,
+        "h": 99
+      },
+      "aspect": 1.6061,
+      "palette": [
+        {
+          "hex": "#2e1835",
+          "coverage": 0.742
+        },
+        {
+          "hex": "#e52928",
+          "coverage": 0.2099
+        },
+        {
+          "hex": "#921d28",
+          "coverage": 0.0232
+        },
+        {
+          "hex": "#e15754",
+          "coverage": 0.0125
+        },
+        {
+          "hex": "#1c0d18",
+          "coverage": 0.0125
+        }
+      ],
+      "detail": {
+        "energy": 11.4313
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "label-5",
+      "kind": "text",
+      "note": "Pollo al limón recipe name white",
+      "grid": "I7:J7",
+      "box": {
+        "x": 0.8,
+        "y": 0.7,
+        "w": 0.2,
+        "h": 0.1
+      },
+      "px": {
+        "x": 1269,
+        "y": 694,
+        "w": 317,
+        "h": 99
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#291631",
+          "coverage": 0.9447
+        },
+        {
+          "hex": "#0a0809",
+          "coverage": 0.0219
+        },
+        {
+          "hex": "#3d1d4d",
+          "coverage": 0.0127
+        },
+        {
+          "hex": "#d3b6de",
+          "coverage": 0.0109
+        },
+        {
+          "hex": "#9373a2",
+          "coverage": 0.0098
+        }
+      ],
+      "detail": {
+        "energy": 18.0202
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "steps-band",
+      "kind": "chrome",
+      "note": "cream band with interlocking tabs holding three step tiles",
+      "grid": "A8:J9",
+      "codeDrawn": true,
+      "box": {
+        "x": 0,
+        "y": 0.8,
+        "w": 1,
+        "h": 0.2
+      },
+      "px": {
+        "x": 0,
+        "y": 794,
+        "w": 1586,
+        "h": 198
+      },
+      "aspect": 8.0101,
+      "palette": [
+        {
+          "hex": "#f8d72a",
+          "coverage": 0.4559
+        },
+        {
+          "hex": "#f4e1c6",
+          "coverage": 0.2223
+        },
+        {
+          "hex": "#b9a8f8",
+          "coverage": 0.1886
+        },
+        {
+          "hex": "#27152d",
+          "coverage": 0.1189
+        },
+        {
+          "hex": "#f8f8f2",
+          "coverage": 0.0143
+        }
+      ],
+      "detail": {
+        "energy": 30.4095
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "step-1",
+      "kind": "chrome",
+      "note": "yellow interlocking tile: 1 Alergias Cuéntanos qué evitar",
+      "grid": "A8:D9",
+      "codeDrawn": true,
+      "box": {
+        "x": 0,
+        "y": 0.8,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "px": {
+        "x": 0,
+        "y": 794,
+        "w": 634,
+        "h": 198
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#f8d72b",
+          "coverage": 0.6387
+        },
+        {
+          "hex": "#f6e5c7",
+          "coverage": 0.2573
+        },
+        {
+          "hex": "#b8a8f8",
+          "coverage": 0.0541
+        },
+        {
+          "hex": "#241630",
+          "coverage": 0.0345
+        },
+        {
+          "hex": "#f8f7f2",
+          "coverage": 0.0154
+        }
+      ],
+      "detail": {
+        "energy": 15.7689
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "step-2",
+      "kind": "chrome",
+      "note": "lilac interlocking tile: 2 Swipe Elige tus 5 recetas",
+      "grid": "D8:G9",
+      "codeDrawn": true,
+      "box": {
+        "x": 0.3,
+        "y": 0.8,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "px": {
+        "x": 476,
+        "y": 794,
+        "w": 634,
+        "h": 198
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#b9a8f8",
+          "coverage": 0.4829
+        },
+        {
+          "hex": "#f8d628",
+          "coverage": 0.2629
+        },
+        {
+          "hex": "#f3e0c5",
+          "coverage": 0.1368
+        },
+        {
+          "hex": "#25132a",
+          "coverage": 0.0873
+        },
+        {
+          "hex": "#a76908",
+          "coverage": 0.0301
+        }
+      ],
+      "detail": {
+        "energy": 17.616
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    },
+    {
+      "id": "step-3",
+      "kind": "chrome",
+      "note": "yellow interlocking tile: 3 Resumen Confirma tu caja",
+      "grid": "G8:J9",
+      "codeDrawn": true,
+      "box": {
+        "x": 0.6,
+        "y": 0.8,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "px": {
+        "x": 952,
+        "y": 794,
+        "w": 634,
+        "h": 198
+      },
+      "aspect": 3.202,
+      "palette": [
+        {
+          "hex": "#f8d829",
+          "coverage": 0.4639
+        },
+        {
+          "hex": "#f1ddc5",
+          "coverage": 0.2446
+        },
+        {
+          "hex": "#27142d",
+          "coverage": 0.2061
+        },
+        {
+          "hex": "#b8a8f8",
+          "coverage": 0.0725
+        },
+        {
+          "hex": "#f8f8f2",
+          "coverage": 0.0129
+        }
+      ],
+      "detail": {
+        "energy": 18.9264
+      },
+      "medium": "semantic",
+      "plate": null,
+      "text": null
+    }
+  ]
+}

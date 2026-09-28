@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import {
   AnimatePresence,
   animate as animateValue,
@@ -12,6 +12,10 @@ import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
 import { RecipeThumb } from "../RecipeThumb/RecipeThumb";
 import type { Recipe } from "../../types/recipe";
+import { SlotOutline } from "../Piece/Piece";
+import { RecipeDetailSheet } from "../RecipeDetailSheet/RecipeDetailSheet";
+import { ArrowRight, Check, Cross, Heart } from "../Icons";
+import { Link, useNavigate } from "react-router-dom";
 import "./SwipeDeck.css";
 
 type ExitDirection = { type: "keep" | "discard"; velocity: number } | null;
@@ -135,7 +139,7 @@ function DeckCard({
             className="swipe-deck__stamp swipe-deck__stamp--pass"
             style={{ opacity: discardStampOpacity }}
           >
-            Fuera
+            Descartada
           </motion.span>
         </>
       )}
@@ -143,7 +147,6 @@ function DeckCard({
         recipe={recipe}
         state={cardState}
         blockedAllergens={blockedAllergens}
-        showMatchBadge
         className={refused ? "swipe-deck__recipe-card--refused" : ""}
       />
     </motion.div>
@@ -157,16 +160,25 @@ export function SwipeDeck() {
     blockedAllergens,
     keepCurrent,
     discardCurrent,
+    keptSlots,
     keptRecipes,
-    progress,
+    repeatRecipe,
     isComplete,
+    deckExhausted,
   } = useAppState();
   const reducedMotion = usePrefersReducedMotion();
+  const navigate = useNavigate();
 
   const [exitDirection, setExitDirection] = useState<ExitDirection>(null);
   const [refused, setRefused] = useState(false);
   const [detailOpen, setDetailOpen] = useState(false);
   const [announcement, setAnnouncement] = useState("");
+
+  useEffect(() => {
+    if (!isComplete) return;
+    const timer = window.setTimeout(() => navigate("/resumen"), 5000);
+    return () => window.clearTimeout(timer);
+  }, [isComplete, navigate]);
 
   const commitDecision = useCallback(
     (type: "keep" | "discard", velocity: number) => {
@@ -198,22 +210,65 @@ export function SwipeDeck() {
 
   const handleDiscardAction = useCallback(() => commitDecision("discard", 0), [commitDecision]);
 
+  const handleRepeat = useCallback(
+    (recipeName: string, recipeId: string) => {
+      repeatRecipe(recipeId);
+      setAnnouncement(`Repetiste ${recipeName} para completar tu caja.`);
+    },
+    [repeatRecipe],
+  );
+
   if (isComplete || !currentRecipe) {
     return (
       <div className="swipe-deck swipe-deck--complete">
-        <div className="swipe-deck__complete-badge" aria-hidden="true">
-          ✓
+        <div className="swipe-deck__complete-copy">
+          <span className="swipe-deck__complete-badge" aria-hidden="true">
+            <Check />
+          </span>
+          <h2 className="swipe-deck__complete-title">
+            {isComplete ? "Tu caja encajó." : "Se acabó el mazo."}
+          </h2>
+          <p className="swipe-deck__complete-lead">
+            {isComplete
+              ? "Cinco recetas en su hueco. Revisa el resumen para confirmar la caja de esta semana."
+              : `Guardaste ${keptRecipes.length} de 5 y no queda ninguna receta más para mostrarte. Repite una de las que ya elegiste para completar la caja, o afloja algún gusto en preferencias.`}
+          </p>
+          <Link to={isComplete ? "/resumen" : "/preferencias"} className="btn btn--primary">
+            {isComplete ? "Ver resumen" : "Editar preferencias"}
+            <ArrowRight className="btn__arrow" />
+          </Link>
+          {isComplete && (
+            <p className="swipe-deck__complete-redirect">Te llevamos al resumen en unos segundos…</p>
+          )}
         </div>
-        <h2 className="swipe-deck__complete-title">Tu mazo está completo</h2>
-        <p className="swipe-deck__complete-lead">
-          Guardaste {keptRecipes.length} de 5 recetas. Revisá el resumen para confirmar la caja
-          de esta semana, o volvé atrás si querés seguir explorando reemplazos.
+        <ol className={`swipe-deck__complete-tray ${deckExhausted ? "swipe-deck__complete-tray--repeatable" : ""}`}>
+          {keptSlots.map(({ slotId, recipe }) =>
+            deckExhausted ? (
+              <li key={slotId}>
+                <button
+                  type="button"
+                  className="swipe-deck__repeat"
+                  onClick={() => handleRepeat(recipe.name, recipe.id)}
+                >
+                  <RecipeThumb recipe={recipe} layoutId={`recipe-shared-${slotId}`} />
+                  <span className="swipe-deck__repeat-badge" aria-hidden="true">
+                    +
+                  </span>
+                  <span className="visually-hidden">
+                    Repetir {recipe.name} para completar tu caja
+                  </span>
+                </button>
+              </li>
+            ) : (
+              <li key={slotId}>
+                <RecipeThumb recipe={recipe} layoutId={`recipe-shared-${slotId}`} />
+              </li>
+            ),
+          )}
+        </ol>
+        <p className="visually-hidden" role="status" aria-live="polite">
+          {announcement}
         </p>
-        <div className="swipe-deck__complete-tray">
-          {keptRecipes.map((recipe) => (
-            <RecipeThumb key={recipe.id} recipe={recipe} layoutId={`recipe-shared-${recipe.id}`} />
-          ))}
-        </div>
       </div>
     );
   }
@@ -221,14 +276,22 @@ export function SwipeDeck() {
   return (
     <div className="swipe-deck">
       <div className="swipe-deck__progress" role="group" aria-label="Progreso del mazo">
-        <div className="swipe-deck__progress-track">
-          <div
-            className="swipe-deck__progress-fill"
-            style={{ transform: `scaleX(${progress})` }}
-          />
-        </div>
+        <ol className="swipe-deck__tray" aria-hidden="true">
+          {Array.from({ length: 5 }, (_, i) => {
+            const slot = keptSlots[i];
+            return (
+              <li key={slot?.slotId ?? `hueco-${i}`} className="swipe-deck__tray-slot">
+                {slot ? (
+                  <RecipeThumb recipe={slot.recipe} layoutId={`recipe-shared-${slot.slotId}`} />
+                ) : (
+                  <SlotOutline tone="dark" />
+                )}
+              </li>
+            );
+          })}
+        </ol>
         <span className="swipe-deck__progress-label">
-          {keptRecipes.length} de 5 recetas listas
+          {keptRecipes.length} de 5 en tu caja
         </span>
       </div>
 
@@ -253,29 +316,19 @@ export function SwipeDeck() {
         <button
           type="button"
           className="swipe-deck__detail-toggle"
-          aria-expanded={detailOpen}
-          onClick={() => setDetailOpen((v) => !v)}
+          aria-haspopup="dialog"
+          onClick={() => setDetailOpen(true)}
         >
-          {detailOpen ? "Ocultar detalle" : "Ver detalle"}
+          Ver detalle
         </button>
-        {detailOpen && (
-          <div className="swipe-deck__detail-panel">
-            <p>
-              <strong>{currentRecipe.minutes} min</strong> · {currentRecipe.kcal} kcal
-            </p>
-            <ul className="swipe-deck__detail-tags">
-              {currentRecipe.tags.map((tag) => (
-                <li key={tag}>{tag}</li>
-              ))}
-            </ul>
-            {isCurrentBlocked && (
-              <p className="swipe-deck__detail-warn">
-                Esta receta está bloqueada por un alérgeno activo en tus preferencias.
-              </p>
-            )}
-          </div>
-        )}
       </div>
+
+      <RecipeDetailSheet
+        recipe={detailOpen ? currentRecipe : null}
+        blocked={isCurrentBlocked}
+        blockedAllergens={blockedAllergens}
+        onClose={() => setDetailOpen(false)}
+      />
 
       <div className="swipe-deck__actions">
         <button
@@ -284,7 +337,8 @@ export function SwipeDeck() {
           onClick={handleDiscardAction}
           aria-label={`Descartar ${currentRecipe.name}`}
         >
-          <span aria-hidden="true">✕</span>
+          <Cross />
+          <span className="swipe-deck__action-label">Descartar</span>
         </button>
         <button
           type="button"
@@ -299,14 +353,15 @@ export function SwipeDeck() {
           }
           aria-disabled={isCurrentBlocked}
         >
-          <span aria-hidden="true">♥</span>
+          <Heart />
+          <span className="swipe-deck__action-label">Guardar</span>
         </button>
       </div>
 
       <p className="swipe-deck__hint">
         {isCurrentBlocked
-          ? "Bloqueada por alergia · usa ✕ para continuar"
-          : "Arrastra o usa los botones · ← descartar · → guardar"}
+          ? "Tiene tu alérgeno: descártala para seguir."
+          : "Arrastra la pieza, usa los botones o las flechas del teclado."}
       </p>
 
       <p className="visually-hidden" role="status" aria-live="polite">

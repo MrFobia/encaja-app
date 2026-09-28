@@ -1,41 +1,32 @@
-import { useState } from "react";
 import type { Recipe } from "../../types/recipe";
 import { formatAllergenWarning } from "../../lib/format";
+import { Piece, SlotOutline } from "../Piece/Piece";
+import { NoEntry } from "../Icons";
 import "./RecipeCard.css";
 
-export type RecipeCardState =
-  | "default"
-  | "dragging"
-  | "kept"
-  | "discarded"
-  | "blocked"
-  | "loading";
+export type RecipeCardState = "default" | "dragging" | "kept" | "discarded" | "blocked" | "loading";
 
 const STATE_TAG_LABEL: Record<RecipeCardState, string> = {
-  default: "Default",
+  default: "Reposo",
   dragging: "Arrastrando",
   kept: "Guardada",
   discarded: "Descartada",
   blocked: "Bloqueada",
-  loading: "Cargando reemplazo",
+  loading: "Buscando reemplazo",
 };
 
 export interface RecipeCardProps {
   recipe: Recipe;
   state?: RecipeCardState;
-  /** Alérgenos activos que están bloqueando esta receta (para el copy exacto). */
   blockedAllergens?: string[];
-  /** Insignia "94% match" — solo tiene sentido dentro del deck. */
   showMatchBadge?: boolean;
-  /** Etiqueta de estado arriba a la izquierda — usado en el showroom /sistema. */
   showStateTag?: boolean;
   className?: string;
 }
 
 /**
- * Bloque BEM `.recipe-card`. Presentacional puro: no sabe de drag ni de
- * routing, solo pinta uno de sus 6 estados. La física de swipe vive en
- * SwipeDeck; esto es la unidad visual reutilizada ahí y en /sistema.
+ * Tarjeta del mazo: la loseta troquelada de la receta más su ficha. Solo
+ * pinta uno de sus 6 estados; la física del swipe vive en SwipeDeck.
  */
 export function RecipeCard({
   recipe,
@@ -45,66 +36,34 @@ export function RecipeCard({
   showStateTag = false,
   className = "",
 }: RecipeCardProps) {
-  const [imgFailed, setImgFailed] = useState(false);
   const isLoading = state === "loading";
   const isBlocked = state === "blocked";
 
-  const modifierClass = state !== "default" ? `recipe-card--${state}` : "";
-  const rootClass = ["recipe-card", modifierClass, className].filter(Boolean).join(" ");
-
-  const photoClass = [
-    "recipe-card__photo",
-    isLoading ? "recipe-card__photo--loading" : "",
-  ]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <article className={rootClass} aria-label={recipe.name}>
-      {showStateTag && (
-        <span className="recipe-card__state-tag">{STATE_TAG_LABEL[state]}</span>
-      )}
-      {showMatchBadge && !isLoading && (
-        <span className="recipe-card__why">{recipe.matchPercent}% match</span>
-      )}
-      <div
-        className={photoClass}
-        style={
-          isLoading || imgFailed
-            ? {
-                background: `linear-gradient(135deg, ${recipe.gradientFrom}, ${recipe.gradientTo})`,
-              }
-            : undefined
-        }
-      >
-        {!isLoading && !imgFailed && (
-          <img
-            className="recipe-card__image"
-            src={`/images/recipes/${recipe.slug}.jpg`}
-            alt=""
-            loading="lazy"
-            onError={() => setImgFailed(true)}
-          />
-        )}
-        <span className="recipe-card__name">{isLoading ? "···" : recipe.name}</span>
-      </div>
-      <div className="recipe-card__meta">
+    <article className={`rcard rcard--${state} ${className}`.trim()} aria-label={isLoading ? "Buscando reemplazo" : recipe.name}>
+      {showStateTag && <span className="rcard__state">{STATE_TAG_LABEL[state]}</span>}
+      <div className="rcard__media">
         {isLoading ? (
-          <span className="recipe-card__meta-item">Buscando…</span>
-        ) : isBlocked ? (
-          <span className="recipe-card__meta-item recipe-card__meta-item--warn">
+          <SlotOutline shape="tile" tone="dark" className="rcard__loading" />
+        ) : (
+          <Piece slug={recipe.slug} shape="tile" blocked={isBlocked || state === "discarded"} eager />
+        )}
+        {showMatchBadge && !isLoading && !isBlocked && (
+          <span className="rcard__match">{recipe.matchPercent}% afín a ti</span>
+        )}
+        {isBlocked && (
+          <span className="allergy-tag rcard__allergy">
+            <NoEntry />
             {formatAllergenWarning(blockedAllergens)}
           </span>
-        ) : (
-          <>
-            <span className="recipe-card__meta-item">{recipe.minutes} min</span>
-            <span className="recipe-card__meta-item">{recipe.kcal} kcal</span>
-            {recipe.tags.slice(0, 1).map((tag) => (
-              <span key={tag} className="recipe-card__meta-item">
-                {tag}
-              </span>
-            ))}
-          </>
+        )}
+      </div>
+      <div className="rcard__info">
+        <h2 className="rcard__name">{isLoading ? "Buscando otra…" : recipe.name}</h2>
+        {!isLoading && (
+          <p className="rcard__meta">
+            {recipe.minutes} min · {recipe.kcal} kcal · {recipe.tags.join(" · ")}
+          </p>
         )}
       </div>
     </article>

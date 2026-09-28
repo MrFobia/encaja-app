@@ -1,0 +1,400 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-26T21:49:46+00:00",
+  "title": "Design System: Encaja",
+  "extensions": {
+    "colorMeta": {
+      "maiz": {
+        "role": "neutral",
+        "displayName": "Maize Field",
+        "canonical": "oklch(87.9% 0.162 90.9)",
+        "tonalRamp": [
+          "#100a00",
+          "#2d2302",
+          "#4e3e0a",
+          "#725b07",
+          "#9b7d12",
+          "#c7a00a",
+          "#f2c52c",
+          "#feeebf"
+        ]
+      },
+      "maiz-deep": {
+        "role": "neutral",
+        "displayName": "Deep Maize"
+      },
+      "berenjena": {
+        "role": "neutral",
+        "displayName": "Aubergine",
+        "canonical": "oklch(24.7% 0.067 310.9)",
+        "tonalRamp": [
+          "#14021f",
+          "#2b1638",
+          "#3b2250",
+          "#4d3263",
+          "#8d759e",
+          "#b299c4",
+          "#d9bfeb",
+          "#f5e9ff"
+        ]
+      },
+      "berenjena-2": {
+        "role": "neutral",
+        "displayName": "Aubergine 2"
+      },
+      "berenjena-3": {
+        "role": "neutral",
+        "displayName": "Aubergine 3"
+      },
+      "teal": {
+        "role": "primary",
+        "displayName": "Keep Teal",
+        "canonical": "oklch(52.6% 0.094 178.3)",
+        "tonalRamp": [
+          "#000f0b",
+          "#032b24",
+          "#0a5f52",
+          "#0e7c6b",
+          "#319281",
+          "#5bb8a5",
+          "#83dfcb",
+          "#bdfeef"
+        ]
+      },
+      "teal-deep": {
+        "role": "primary",
+        "displayName": "Deep Teal"
+      },
+      "lila": {
+        "role": "secondary",
+        "displayName": "Quiet Lilac",
+        "canonical": "oklch(81.8% 0.103 296.0)",
+        "tonalRamp": [
+          "#100029",
+          "#2a134f",
+          "#45316f",
+          "#635091",
+          "#8673b7",
+          "#aa97de",
+          "#c9b6ff",
+          "#e6dcff"
+        ]
+      },
+      "lila-soft": {
+        "role": "secondary",
+        "displayName": "Soft Lilac"
+      },
+      "carton": {
+        "role": "neutral",
+        "displayName": "Cardboard",
+        "canonical": "oklch(91.7% 0.032 82.8)",
+        "tonalRamp": [
+          "#120a00",
+          "#2c2311",
+          "#483e2c",
+          "#675c49",
+          "#8a7f6b",
+          "#afa38e",
+          "#d9c7a8",
+          "#eee2cc"
+        ]
+      },
+      "carton-deep": {
+        "role": "neutral",
+        "displayName": "Deep Cardboard"
+      },
+      "allergy": {
+        "role": "tertiary",
+        "displayName": "Allergen Red",
+        "canonical": "oklch(56.7% 0.212 28.8)",
+        "tonalRamp": [
+          "#1e0000",
+          "#4a0303",
+          "#78100b",
+          "#b00e0b",
+          "#d7261e",
+          "#fe7464",
+          "#ffd9d4",
+          "#fee9e6"
+        ]
+      },
+      "allergy-soft": {
+        "role": "tertiary",
+        "displayName": "Soft Allergen"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "oklch(43.3% 0.056 309.8)",
+        "tonalRamp": [
+          "#12041c",
+          "#2c1c38",
+          "#493756",
+          "#5a4868",
+          "#8a779a",
+          "#af9bc0",
+          "#d6c1e7",
+          "#f5e9fe"
+        ]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "On-Dark"
+      },
+      "on-dark-soft": {
+        "role": "neutral",
+        "displayName": "On-Dark Soft"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home headline only, two lines sized to container (cqi)."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section and page titles; balanced wrap."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Recipe names and step titles; display numerals for counters."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Intro under headlines, 40-52ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Default text, tabular numerals."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips, tags, counts; sentence case, no tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "piece",
+        "value": "0 10px 22px -12px rgb(26 13 31 / 0.55)",
+        "purpose": "Resting pieces and small lifted objects."
+      },
+      {
+        "name": "lift",
+        "value": "0 22px 40px -18px rgb(26 13 31 / 0.6)",
+        "purpose": "Aubergine trays."
+      },
+      {
+        "name": "teal-glow",
+        "value": "0 10px 20px -12px rgb(10 95 82 / 0.9)",
+        "purpose": "Teal action only."
+      },
+      {
+        "name": "drag",
+        "value": "drop-shadow(0 18px 18px rgb(26 13 31 / 0.3))",
+        "purpose": "Deck piece while dragged (filter)."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 3px solid #2b1638; outline-offset: 3px (maize on dark)",
+        "purpose": "Keyboard focus everywhere."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Default ease for press, eject, underline, burst."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Declared token for symmetric moves."
+      },
+      {
+        "name": "press",
+        "value": "transform: scale(0.97) 140ms ease-out (0.96 on deck actions)",
+        "purpose": "Every button, chip, and meter."
+      },
+      {
+        "name": "layout-spring",
+        "value": "spring, duration 0.45s, bounce 0.15",
+        "purpose": "Re-flow of preference and summary lists."
+      },
+      {
+        "name": "entrance-spring",
+        "value": "spring, duration 0.55s, bounce 0.18, stagger 0.06s",
+        "purpose": "Hero piece column entrance; confirmation pieces drop at 0.6s bounce 0.22."
+      },
+      {
+        "name": "eject",
+        "value": "transform 480ms ease-out to translate(22%, 5%) rotate(6deg)",
+        "purpose": "Blocked piece displaced from its slot."
+      },
+      {
+        "name": "snap-burst",
+        "value": "stroke draw 420ms ease-out",
+        "purpose": "White tick burst on block/snap."
+      },
+      {
+        "name": "snap-back",
+        "value": "spring stiffness 320, damping 16, mass 0.7",
+        "purpose": "Released drag returns with overshoot."
+      },
+      {
+        "name": "exit-keep",
+        "value": "460ms cubic-bezier(0.2, 0.9, 0.25, 1), x 480px, rotate 14deg",
+        "purpose": "Keep weighs more: slower, less rotation."
+      },
+      {
+        "name": "exit-discard",
+        "value": "300ms cubic-bezier(0.2, 0.9, 0.25, 1), x -560px, rotate -24deg",
+        "purpose": "Discard is lighter: faster, more rotation."
+      },
+      {
+        "name": "refuse-shake",
+        "value": "380ms ease-out horizontal shake",
+        "purpose": "Blocked card refuses a keep."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "fade only / 8% shift / no burst / no drag",
+        "purpose": "prefers-reduced-motion variants for every motion above."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile",
+        "value": "560px"
+      },
+      {
+        "name": "nav-compact",
+        "value": "760px"
+      },
+      {
+        "name": "single-column",
+        "value": "860-960px"
+      },
+      {
+        "name": "hero-stack",
+        "value": "1020px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single teal act-or-keep action per view.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Arma tu caja <svg class=\"ds-arrow\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:14px;min-height:56px;padding:0 30px;border:0;border-radius:999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:19px;font-weight:650;cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),background-color 180ms ease}.ds-btn:active{transform:scale(0.97)}.ds-btn:focus-visible{outline:3px solid #2b1638;outline-offset:3px}.ds-arrow{width:20px;height:20px;transition:transform 180ms cubic-bezier(0.23,1,0.32,1)}.ds-btn:hover .ds-arrow{transform:translateX(3px)}.ds-btn-primary{background:#0e7c6b;color:#fff;box-shadow:0 10px 20px -12px rgb(10 95 82 / 0.9)}.ds-btn-primary:hover{background:#0a5f52}"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Aubergine secondary action with maize text.",
+      "html": "<button class=\"ds-btn-dark\">Ver resumen</button>",
+      "css": ".ds-btn-dark{display:inline-flex;align-items:center;min-height:56px;padding:0 30px;border:0;border-radius:999px;background:#2b1638;color:#ffd23f;font-family:'Figtree Variable',system-ui,sans-serif;font-size:19px;font-weight:650;cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),background-color 180ms ease}.ds-btn-dark:hover{background:#3b2250}.ds-btn-dark:active{transform:scale(0.97)}.ds-btn-dark:focus-visible{outline:3px solid #2b1638;outline-offset:3px}"
+    },
+    {
+      "name": "Deck Actions",
+      "kind": "button",
+      "refersTo": "deck-keep",
+      "description": "Discard (neutral aubergine outline, never red) and Keep (teal) at 64px.",
+      "html": "<div class=\"ds-deck-actions\"><button class=\"ds-act ds-act-discard\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M6 6l12 12M18 6L6 18\"/></svg>Descartar</button><button class=\"ds-act ds-act-keep\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z\"/></svg>Guardar</button></div>",
+      "css": ".ds-deck-actions{display:flex;gap:22px;padding:16px;background:#ffd23f}.ds-act{display:inline-flex;align-items:center;gap:10px;min-height:64px;padding:0 28px 0 22px;border:0;border-radius:999px;font-family:'Figtree Variable',system-ui,sans-serif;font-size:18px;font-weight:700;cursor:pointer;transition:transform 140ms cubic-bezier(0.23,1,0.32,1),background-color 180ms ease}.ds-act svg{width:24px;height:24px}.ds-act:active{transform:scale(0.96)}.ds-act:focus-visible{outline:3px solid #2b1638;outline-offset:3px}.ds-act-discard{background:transparent;color:#2b1638;box-shadow:inset 0 0 0 2.5px #2b1638}.ds-act-discard:hover{background:rgb(43 22 56 / 0.08)}.ds-act-keep{background:#0e7c6b;color:#fff;box-shadow:0 10px 20px -12px rgb(10 95 82 / 0.9)}.ds-act-keep:hover{background:#0a5f52}"
+    },
+    {
+      "name": "Chips",
+      "kind": "chip",
+      "refersTo": "chip-preference",
+      "description": "Preference chip (off/on) and allergy chip on; red ring only for the active allergy.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\">Picante</button><button class=\"ds-chip ds-chip-pref-on\">Vegetariano</button><button class=\"ds-chip ds-chip-allergy-on\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z\"/></svg>Sin mariscos</button></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px;padding:16px;background:#ffd23f}.ds-chip{display:inline-flex;align-items:center;gap:9px;min-height:50px;padding:0 20px 0 15px;border:0;border-radius:999px;background:rgb(255 255 255 / 0.35);box-shadow:inset 0 0 0 2px rgb(43 22 56 / 0.35);color:#2b1638;font-family:'Figtree Variable',system-ui,sans-serif;font-size:17px;font-weight:650;cursor:pointer;transition:background-color 160ms ease,box-shadow 160ms ease,transform 140ms cubic-bezier(0.23,1,0.32,1)}.ds-chip svg{width:20px;height:20px}.ds-chip:hover{background:rgb(255 255 255 / 0.6)}.ds-chip:active{transform:scale(0.97)}.ds-chip:focus-visible{outline:3px solid #2b1638;outline-offset:3px}.ds-chip-pref-on,.ds-chip-pref-on:hover{background:#2b1638;box-shadow:none;color:#ffd23f}.ds-chip-allergy-on,.ds-chip-allergy-on:hover{background:#e6dcff;box-shadow:inset 0 0 0 3px #d7261e}.ds-chip-allergy-on svg{color:#d7261e}"
+    },
+    {
+      "name": "Allergen Tag",
+      "kind": "chip",
+      "refersTo": "allergy-tag",
+      "description": "The only red fill in the system; marks a recipe blocked by an active allergen.",
+      "html": "<span class=\"ds-allergy-tag\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"8\"/><path d=\"M6.5 6.5l11 11\"/></svg>Contiene mariscos</span>",
+      "css": ".ds-allergy-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px 5px 8px;border-radius:999px;background:#d7261e;color:#fff;font-family:'Figtree Variable',system-ui,sans-serif;font-size:13px;font-weight:700;white-space:nowrap}.ds-allergy-tag svg{width:15px;height:15px}"
+    },
+    {
+      "name": "Box Meter",
+      "kind": "nav",
+      "refersTo": "box-meter",
+      "description": "Nav instrument: five slot glyphs, n/5 count, active allergy badge.",
+      "html": "<a class=\"ds-meter\" href=\"#\"><span class=\"ds-meter-slots\"><i class=\"on\"></i><i class=\"on\"></i><i></i><i></i><i></i></span><span class=\"ds-meter-count\">2/5</span><span class=\"ds-meter-allergy\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"><path d=\"M12 3l7 3v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6z\"/></svg>1</span></a>",
+      "css": ".ds-meter{display:inline-flex;align-items:center;gap:12px;min-height:46px;padding:0 8px 0 16px;border-radius:999px;background:#c9b6ff;color:#2b1638;font-family:'Figtree Variable',system-ui,sans-serif;font-weight:700;text-decoration:none;transition:transform 140ms cubic-bezier(0.23,1,0.32,1)}.ds-meter:active{transform:scale(0.97)}.ds-meter:focus-visible{outline:3px solid #2b1638;outline-offset:3px}.ds-meter-slots{display:flex;gap:3px}.ds-meter-slots i{width:10px;height:16px;border-radius:3px;box-shadow:inset 0 0 0 2px #2b1638}.ds-meter-slots i.on{background:#2b1638;transform:translateY(-1px)}.ds-meter-count{font-size:15px;font-variant-numeric:tabular-nums}.ds-meter-allergy{display:inline-flex;align-items:center;gap:4px;height:32px;padding:0 10px 0 8px;border-radius:999px;background:#2b1638;color:#fff;font-size:14px}.ds-meter-allergy svg{width:16px;height:16px;color:#ffd9d4}"
+    },
+    {
+      "name": "Slot Tray",
+      "kind": "custom",
+      "refersTo": "tray-panel",
+      "description": "Aubergine tray with dashed Encaja-piece slot outlines (empty) and one solid piece (kept).",
+      "html": "<div class=\"ds-tray\"><svg viewBox=\"-70 -70 1100 455\"><path class=\"ds-kept\" d=\"M 37.8 0 H 589.8 V -18.9 A 34.7 34.7 0 0 1 624.5 -53.6 H 681.2 A 34.7 34.7 0 0 1 715.8 -18.9 V 0 H 922.2 A 37.8 37.8 0 0 1 960 37.8 V 94.5 H 978.9 A 34.7 34.7 0 0 1 1013.5 129.2 V 185.8 A 34.7 34.7 0 0 1 978.9 220.5 H 960 V 277.2 A 37.8 37.8 0 0 1 922.2 315 H 715.8 V 296.1 A 34.7 34.7 0 0 0 681.2 261.4 H 624.5 A 34.7 34.7 0 0 0 589.8 296.1 V 315 H 37.8 A 37.8 37.8 0 0 1 0 277.2 V 220.5 H 18.9 A 34.7 34.7 0 0 0 53.6 185.8 V 129.2 A 34.7 34.7 0 0 0 18.9 94.5 H 0 V 37.8 A 37.8 37.8 0 0 1 37.8 0 Z\"/></svg><svg viewBox=\"-70 -70 1100 455\"><path class=\"ds-empty\" d=\"M 37.8 0 H 589.8 V -18.9 A 34.7 34.7 0 0 1 624.5 -53.6 H 681.2 A 34.7 34.7 0 0 1 715.8 -18.9 V 0 H 922.2 A 37.8 37.8 0 0 1 960 37.8 V 94.5 H 978.9 A 34.7 34.7 0 0 1 1013.5 129.2 V 185.8 A 34.7 34.7 0 0 1 978.9 220.5 H 960 V 277.2 A 37.8 37.8 0 0 1 922.2 315 H 715.8 V 296.1 A 34.7 34.7 0 0 0 681.2 261.4 H 624.5 A 34.7 34.7 0 0 0 589.8 296.1 V 315 H 37.8 A 37.8 37.8 0 0 1 0 277.2 V 220.5 H 18.9 A 34.7 34.7 0 0 0 53.6 185.8 V 129.2 A 34.7 34.7 0 0 0 18.9 94.5 H 0 V 37.8 A 37.8 37.8 0 0 1 37.8 0 Z\"/></svg></div>",
+      "css": ".ds-tray{display:flex;flex-direction:column;gap:0;width:320px;padding:32px 44px 28px 28px;border-radius:36px;background:#2b1638;box-shadow:0 22px 40px -18px rgb(26 13 31 / 0.6);transform:rotate(-2deg)}.ds-tray svg{display:block;width:100%;overflow:visible}.ds-kept{fill:#eee2cc;stroke:#d9c7a8;stroke-width:4}.ds-empty{fill:rgb(255 255 255 / 0.04);stroke:rgb(247 241 234 / 0.7);stroke-width:5;stroke-dasharray:18 16;stroke-linecap:round}"
+    },
+    {
+      "name": "Site Nav",
+      "kind": "nav",
+      "refersTo": "nav",
+      "description": "Sticky maize bar with growing-underline links.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-logo\">encaja</span><a href=\"#\" class=\"active\">Cómo funciona</a><a href=\"#\">Recetas</a><a href=\"#\">Alergias</a></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:34px;min-height:76px;padding:0 24px;background:#ffd23f;color:#2b1638;box-shadow:0 1px 0 rgb(43 22 56 / 0.12);font-family:'Figtree Variable',system-ui,sans-serif;font-size:16px;font-weight:550}.ds-logo{font-family:'Gasoek One','Arial Black',sans-serif;font-size:30px;margin-right:6px}.ds-nav a{color:inherit;text-decoration:none;padding:6px 0;background:linear-gradient(currentColor,currentColor) 0 100% / 0 2px no-repeat;transition:background-size 220ms cubic-bezier(0.23,1,0.32,1)}.ds-nav a.active,.ds-nav a:hover{background-size:100% 2px}.ds-nav a:focus-visible{outline:3px solid #2b1638;outline-offset:3px;border-radius:8px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Die-Cut Tray",
+    "overview": "Encaja is a flat maize-yellow field on which aubergine trays hold speckled cardboard pieces. Every recipe is a die-cut piece with a tab on its top and right edges and a notch on its bottom and left, so pieces interlock in a column and in a row. The tray has five slots; an empty slot is a dashed outline of the same silhouette, a kept recipe is the solid piece. Safety is shown as physics: a piece that carries an active allergen is pushed out of its slot, desaturated, and labelled in the system's only red.\n\nThe world is loud in form and quiet in colour logic. A chunky heavy lowercase display face carries the voice; a plain humanist sans carries every instruction. Colour is spent by role, not by decoration: teal means act or keep, lilac is the quiet secondary, aubergine is the tray and the ink, red means \"this can hurt you\" and nothing else. Surfaces are flat colour fields; depth comes only from pieces and trays lifting off them.\n\nMotion is tactile and asymmetric. Lists re-flow on springs, a blocked piece ejects on a long ease-out, keeping weighs more than discarding, and every path has a reduced-motion variant that keeps the information and drops the travel.",
+    "keyCharacteristics": [
+      "Flat maize field (#ffd23f) with aubergine tray panels, some rotated a couple of degrees or skewed at one edge.",
+      "One interlocking piece silhouette, used raster (terrazzo cardboard with a food photo) and vector (dashed slot outline, step tiles, logo isotype).",
+      "Teal is the single action colour; red exists only on allergen labels and the active allergy chip.",
+      "Gasoek One display in lowercase-feeling heavy blocks; Figtree Variable for all UI text.",
+      "Pill-shaped controls, large hit areas (50 to 66px tall), press scale on every control.",
+      "Spring re-layout, 480ms eject, drawn snap bursts, reduced-motion variants throughout."
+    ],
+    "rules": [
+      {
+        "name": "The Red Means Harm Rule",
+        "body": "Allergen Red appears only where an active allergen blocks a recipe: the allergen tag, the active allergy chip, the allergen warning line. Discarding by taste is neutral (aubergine outline button, aubergine \"pass\" stamp) and never red.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Teal Rule",
+        "body": "Teal marks the single act-or-keep control in a view. Secondary actions are the aubergine outline, the aubergine solid, or an underlined text link.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Gasoek One is for headlines, recipe names, and big numerals only; every control, label, and sentence of instruction is Figtree. Display weight stays 400 (the face is already heavy).",
+        "section": "typography"
+      },
+      {
+        "name": "The Objects Lift, Fields Don't Rule",
+        "body": "No shadow on sections, the nav (a 1px aubergine hairline at 12% on inner pages), chips, or text containers. Shadows go under pieces, trays, and the teal action.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** build every new recipe surface from the Encaja piece silhouette (`piecePath`), raster for filled, dashed outline for empty.",
+      "**Do** keep teal to the single act-or-keep control per view and hover it to Deep Teal.",
+      "**Do** show an allergen block with all three signals together: displaced or greyed piece, red allergen tag, and text.",
+      "**Do** set headlines and recipe names in Gasoek One at weight 400 and everything interactive in Figtree Variable.",
+      "**Do** give every control a 140ms scale(0.97) press and at least a 50px height.",
+      "**Do** ship a prefers-reduced-motion variant for every spring, eject, burst, and drag (fade or short shift instead of travel).",
+      "**Do** use real recipe photos from public/images/recipes inside pieces; regenerate rasters with scripts/make-pieces.py."
+    ],
+    "donts": [
+      "**Don't** use Allergen Red for discard, errors of taste, prices, or decoration; discard is aubergine.",
+      "**Don't** introduce the category default of green-and-lime healthy branding or a second action colour.",
+      "**Don't** put shadows on flat fields, chips, or the nav; depth is for pieces, trays, and the teal action.",
+      "**Don't** uppercase or letter-space labels; labels are sentence case at 650-700 weight.",
+      "**Don't** change the piece geometry in one place only; src/lib/piece.ts and scripts/make-pieces.py must match.",
+      "**Don't** make any path gesture-only; buttons and keyboard stay first-class."
+    ]
+  }
+}

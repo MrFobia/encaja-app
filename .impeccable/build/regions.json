@@ -1,0 +1,172 @@
+{
+ "regions": [
+  {
+   "id": "logo",
+   "kind": "chrome",
+   "grid": "A0:B0",
+   "note": "encaja wordmark, chunky heavy lowercase, aubergine, j with square dot",
+   "codeDrawn": true
+  },
+  {
+   "id": "nav-links",
+   "kind": "text",
+   "grid": "C0:E0",
+   "note": "nav links Cómo funciona, Recetas, Alergias in aubergine UI sans"
+  },
+  {
+   "id": "nav-cta",
+   "kind": "control",
+   "grid": "J0:J0",
+   "note": "lilac pill button Entrar"
+  },
+  {
+   "id": "burst-top",
+   "kind": "chrome",
+   "grid": "E1:E1",
+   "note": "three short aubergine motion tick strokes near the comma",
+   "codeDrawn": true
+  },
+  {
+   "id": "headline",
+   "kind": "text",
+   "grid": "A1:E2",
+   "note": "Tu semana, first headline line, huge chunky heavy display, aubergine (second line encajada. continues below in the same face)"
+  },
+  {
+   "id": "headline-2",
+   "kind": "text",
+   "grid": "A3:E3",
+   "note": "encajada. second headline line, same heavy display"
+  },
+  {
+   "id": "subline",
+   "kind": "text",
+   "grid": "A4:D4",
+   "note": "Elige 5 recetas con un gesto. Lo que tiene tus alergias no entra. two lines aubergine UI sans"
+  },
+  {
+   "id": "cta",
+   "kind": "control",
+   "grid": "A5:C5",
+   "note": "deep teal pill button Arma tu caja with arrow"
+  },
+  {
+   "id": "cta-link",
+   "kind": "text",
+   "grid": "A6:C6",
+   "note": "underlined text link Mantener la caja automática"
+  },
+  {
+   "id": "bowl-piece",
+   "kind": "image",
+   "grid": "D5:F8",
+   "note": "loose die-cut speckled card piece with tabs holding a chickpea bowl photo, tilted, on yellow"
+  },
+  {
+   "id": "burst-bowl",
+   "kind": "chrome",
+   "grid": "F5:F5",
+   "note": "three short aubergine motion tick strokes by the bowl piece",
+   "codeDrawn": true
+  },
+  {
+   "id": "panel",
+   "kind": "chrome",
+   "grid": "F0:J8",
+   "container": true,
+   "note": "aubergine panel with an angled top-left corner, flat",
+   "codeDrawn": true
+  },
+  {
+   "id": "chips",
+   "kind": "control",
+   "grid": "F0:J1",
+   "note": "row of 4 allergy chips: Sin mariscos active lilac fill red outline shield icon, Sin gluten, Sin lácteos, Sin frutos secos outlined"
+  },
+  {
+   "id": "counter",
+   "kind": "text",
+   "grid": "G1:I2",
+   "note": "7 de 8 big chunky display white, recetas disponibles lilac sans"
+  },
+  {
+   "id": "piece-stack",
+   "kind": "image",
+   "grid": "F2:H8",
+   "container": true,
+   "note": "vertical column of 5 interlocking die-cut speckled card recipe pieces with food photos (pasta, teriyaki salmon, curry, empty dashed slot where the ceviche was, grilled chicken bowl), each a separate piece built in code from a recipe photo",
+   "bleed": true
+  },
+  {
+   "id": "label-1",
+   "kind": "text",
+   "grid": "I2:J2",
+   "note": "recipe name two lines white sans"
+  },
+  {
+   "id": "label-2",
+   "kind": "text",
+   "grid": "I3:J3",
+   "note": "Salmón teriyaki recipe name white"
+  },
+  {
+   "id": "label-3",
+   "kind": "text",
+   "grid": "I4:J4",
+   "note": "Curry recipe name white"
+  },
+  {
+   "id": "piece-blocked",
+   "kind": "image",
+   "grid": "H5:I7",
+   "note": "ceviche die-cut piece greyed desaturated, pushed out of the column to the right, tilted",
+   "bleed": true
+  },
+  {
+   "id": "label-blocked",
+   "kind": "text",
+   "grid": "J5:J5",
+   "note": "Ceviche mixto white"
+  },
+  {
+   "id": "allergy-tag",
+   "kind": "control",
+   "grid": "J6:J6",
+   "note": "red pill tag Contiene mariscos with no-entry icon"
+  },
+  {
+   "id": "label-5",
+   "kind": "text",
+   "grid": "I7:J7",
+   "note": "Pollo al limón recipe name white"
+  },
+  {
+   "id": "steps-band",
+   "kind": "chrome",
+   "grid": "A8:J9",
+   "note": "cream band with interlocking tabs holding three step tiles",
+   "codeDrawn": true
+  },
+  {
+   "id": "step-1",
+   "kind": "chrome",
+   "grid": "A8:D9",
+   "note": "yellow interlocking tile: 1 Alergias Cuéntanos qué evitar",
+   "codeDrawn": true
+  },
+  {
+   "id": "step-2",
+   "kind": "chrome",
+   "grid": "D8:G9",
+   "note": "lilac interlocking tile: 2 Swipe Elige tus 5 recetas",
+   "codeDrawn": true
+  },
+  {
+   "id": "step-3",
+   "kind": "chrome",
+   "grid": "G8:J9",
+   "note": "yellow interlocking tile: 3 Resumen Confirma tu caja",
+   "codeDrawn": true
+  }
+ ]
+}

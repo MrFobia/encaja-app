@@ -1,15 +1,6 @@
-@reference "../../index.css";
 @layer components {
   .recipe-thumb {
-    @apply h-11 w-11 flex-none overflow-hidden rounded-[9px];
-    background: linear-gradient(135deg, #e8865f, #c9773f);
-  }
-
-  .recipe-thumb__image {
-    @apply h-full w-full object-cover;
-  }
-
-  .recipe-thumb__gradient {
-    @apply h-full w-full;
+    position: relative;
+    width: 100%;
   }
 }

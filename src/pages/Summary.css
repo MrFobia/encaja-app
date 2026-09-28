@@ -1,82 +1,318 @@
-@reference "../index.css";
 @layer components {
-  .summary-page {
-    @apply max-w-xl py-16;
+  .summary {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    grid-template-areas:
+      "head head"
+      "tray checkout";
+    gap: 36px 56px;
+    padding-top: clamp(36px, 5vw, 72px);
+    padding-bottom: clamp(56px, 8vw, 110px);
+    align-items: start;
   }
 
-  .summary-page__title {
-    @apply mt-1 text-3xl;
+  .summary--empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .summary-page__lead {
-    @apply mt-3 text-[15.5px] text-neutral-body;
+  .summary__head {
+    grid-area: head;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
   }
 
-  .summary-page__cta {
-    @apply mt-6 inline-block rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white no-underline;
+  .summary__title {
+    font-size: clamp(44px, 5.6vw, 84px);
   }
 
-  .summary-page__list {
-    @apply mt-8 flex flex-col gap-2.5;
+  .summary__lead {
+    max-width: 46ch;
+    font-size: 19px;
+  }
+
+  .summary__tray {
+    grid-area: tray;
     list-style: none;
-    padding-left: 0;
+    margin: 0;
+    padding: 40px clamp(20px, 3vw, 40px) 36px;
+    border-radius: 36px;
+    background: var(--color-berenjena);
+    color: var(--color-on-dark);
+    display: flex;
+    flex-direction: column;
   }
 
-  .summary-page__row {
-    @apply flex items-center gap-3 rounded-xl border border-border bg-white p-2.5;
+  .summary__row {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 250px) minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 28px;
   }
 
-  .summary-page__row-text {
-    @apply flex-1;
+  .summary__row + .summary__row {
+    margin-top: 18px;
   }
 
-  .summary-page__row-text b {
-    @apply block font-serif text-[14px] text-petrol;
+  .summary__row:nth-child(1) {
+    z-index: 5;
+  }
+  .summary__row:nth-child(2) {
+    z-index: 4;
+  }
+  .summary__row:nth-child(3) {
+    z-index: 3;
+  }
+  .summary__row:nth-child(4) {
+    z-index: 2;
   }
 
-  .summary-page__row-text span {
-    @apply text-xs text-neutral;
+  .summary__row-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
   }
 
-  .summary-page__swap {
-    @apply rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-terracotta-dark transition-opacity;
+  .summary__name {
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.2;
   }
 
-  .summary-page__swap:disabled {
-    @apply cursor-not-allowed opacity-40;
+  .summary__meta {
+    font-size: 15px;
+    color: var(--color-on-dark-soft);
   }
 
-  .summary-page__check {
-    @apply flex h-5 w-5 flex-none items-center justify-center rounded-full bg-sage text-xs text-white;
+  .summary__days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
   }
 
-  .summary-page__nutrition {
-    @apply mt-6;
+  .summary__day {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: rgb(247 241 234 / 0.14);
+    color: var(--color-on-dark-soft);
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background-color 160ms var(--ease-out),
+      color 160ms var(--ease-out),
+      transform 140ms var(--ease-out);
   }
 
-  .summary-page__nutrition-toggle {
-    @apply text-sm font-semibold text-terracotta-dark underline decoration-dotted;
+  .summary__day:active {
+    transform: scale(0.88);
   }
 
-  .summary-page__nutrition-body {
-    @apply mt-2 rounded-xl bg-cream-2 p-3 text-sm text-neutral-body;
+  .summary__day[aria-pressed="true"] {
+    background: var(--color-teal);
+    color: var(--color-on-dark);
+    transform: scale(1.08);
   }
 
-  .summary-page__footer {
-    @apply mt-9 rounded-2xl border border-border bg-white p-6;
-    box-shadow: var(--shadow-card-sm);
+  @media (hover: hover) and (pointer: fine) {
+    .summary__day:not([aria-pressed="true"]):hover {
+      background: rgb(247 241 234 / 0.28);
+    }
   }
 
-  .summary-page__price-row {
-    @apply flex justify-between text-sm text-neutral;
+  .summary__swap {
+    min-height: 42px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    box-shadow: inset 0 0 0 2px var(--color-lila);
+    color: var(--color-lila);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      transform 140ms var(--ease-out);
   }
 
-  .summary-page__price-row b {
-    @apply font-serif text-base text-petrol;
+  .summary__swap:active {
+    transform: scale(0.96);
   }
 
-  .summary-page__confirm {
-    @apply mt-4 w-full rounded-2xl bg-terracotta-dark py-3.5 text-center text-sm font-bold text-white;
-    box-shadow: 0 10px 20px -8px rgba(232, 98, 61, 0.5);
+  .summary__swap:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .summary__swap:not(:disabled):hover {
+      background: var(--color-lila);
+      color: var(--color-berenjena);
+    }
+  }
+
+  .summary__checkout {
+    grid-area: checkout;
+    position: sticky;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 30px;
+    border-radius: 28px;
+    background: var(--color-carton);
+  }
+
+  .summary__nutrition-toggle {
+    align-self: flex-start;
+    background: none;
+    border: 0;
+    padding: 4px 0;
+    font-size: 16px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.25em;
+    cursor: pointer;
+  }
+
+  .summary__nutrition {
+    font-size: 16px;
+    color: var(--color-ink-soft);
+  }
+
+  .summary__delivery {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+    font-weight: 650;
+  }
+
+  .summary__delivery svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .summary__field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .summary__field-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-ink-soft);
+  }
+
+  .summary__field-label svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .summary__address-input {
+    min-height: 48px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 14px;
+    background: rgb(43 22 56 / 0.06);
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--color-berenjena);
+    transition: box-shadow 160ms var(--ease-out);
+  }
+
+  .summary__address-input:focus-visible {
+    outline: none;
+    box-shadow: inset 0 0 0 2.5px var(--color-berenjena);
+  }
+
+  .summary__slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .summary__slot {
+    padding: 10px 14px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: rgb(43 22 56 / 0.06);
+    color: var(--color-ink-soft);
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out);
+  }
+
+  .summary__slot.is-active {
+    background: var(--color-berenjena);
+    color: #fff;
+  }
+
+  .summary__warn {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-ink-soft);
+  }
+
+  .summary__price {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-top: 16px;
+    border-top: 2px solid rgb(43 22 56 / 0.15);
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .summary__price b {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-size: 36px;
+  }
+
+  .summary__confirm {
+    width: 100%;
+  }
+
+  @media (max-width: 960px) {
+    .summary {
+      grid-template-columns: minmax(0, 1fr);
+      grid-template-areas:
+        "head"
+        "tray"
+        "checkout";
+    }
+    .summary__checkout {
+      position: static;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .summary__row {
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px 16px;
+      padding-bottom: 10px;
+    }
+    .summary__row .recipe-thumb {
+      grid-column: 1 / -1;
+    }
   }
 }

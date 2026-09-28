@@ -1,30 +1,53 @@
-@reference "../../index.css";
 @layer components {
-  .preference-chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-2 text-sm font-medium text-petrol transition-colors duration-150;
+  .pchip {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 50px;
+    padding: 0 20px 0 15px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: rgb(255 255 255 / 0.35);
+    box-shadow: inset 0 0 0 2px rgb(43 22 56 / 0.35);
+    color: var(--color-berenjena);
+    font-size: 17px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+      background-color 160ms ease,
+      box-shadow 160ms ease,
+      color 160ms ease,
+      transform 140ms var(--ease-out);
   }
 
-  .preference-chip:hover {
-    @apply border-terracotta-dark/40;
+  .pchip:active {
+    transform: scale(0.97);
   }
 
-  .preference-chip__icon {
-    @apply text-xs;
+  .pchip__icon {
+    width: 20px;
+    height: 20px;
+    flex: none;
   }
 
-  /* ---- Preferencia blanda (gusto): terracota cuando activa ---- */
-  .preference-chip--preference.preference-chip--active {
-    @apply border-terracotta bg-terracotta/10 text-terracotta-dark;
+  .pchip--allergy.is-on {
+    background: var(--color-lila-soft);
+    box-shadow: inset 0 0 0 3px var(--color-allergy);
   }
 
-  /* ---- Alergia (seguridad): rojo real, exclusivo de este contexto ---- */
-  .preference-chip--allergy.preference-chip--active {
-    border-color: rgba(194, 59, 34, 0.45);
-    background: rgba(194, 59, 34, 0.1);
+  .pchip--allergy.is-on .pchip__icon {
     color: var(--color-allergy);
   }
 
-  .preference-chip--allergy .preference-chip__icon {
-    @apply font-bold;
+  .pchip--preference.is-on {
+    background: var(--color-berenjena);
+    box-shadow: none;
+    color: var(--color-maiz);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .pchip:not(.is-on):hover {
+      background: rgb(255 255 255 / 0.6);
+    }
   }
 }

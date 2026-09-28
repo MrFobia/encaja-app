@@ -1,51 +1,166 @@
-@reference "../index.css";
 @layer components {
-  .confirmation-page {
-    @apply mx-auto max-w-md py-20 text-center;
+  .confirm {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 48px 72px;
+    padding-top: clamp(40px, 6vw, 88px);
+    padding-bottom: clamp(56px, 8vw, 110px);
   }
 
-  .confirmation-page__badge {
-    @apply mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-sage text-3xl font-bold text-white;
+  .confirm--empty {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
   }
 
-  .confirmation-page__title {
-    @apply mt-2 text-3xl;
+  .confirm__copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
   }
 
-  .confirmation-page__lead {
-    @apply mt-3 text-[15.5px] text-neutral-body;
+  .confirm__title {
+    font-size: clamp(48px, 6vw, 92px);
+    max-width: 11ch;
   }
 
-  .confirmation-page__cta {
-    @apply mt-6 inline-block rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white no-underline;
+  .confirm__lead {
+    max-width: 44ch;
+    font-size: 19px;
   }
 
-  .confirmation-page__countdown {
-    @apply mt-8 flex flex-col gap-1 rounded-2xl border border-border bg-white px-6 py-5;
-    box-shadow: var(--shadow-card-sm);
+  .confirm__cutoff {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border-radius: 18px;
+    background: var(--color-lila);
+    font-size: 17px;
   }
 
-  .confirmation-page__countdown-label {
-    @apply text-xs font-semibold uppercase tracking-wide text-neutral;
+  .confirm__cutoff svg {
+    width: 24px;
+    height: 24px;
+    flex: none;
   }
 
-  .confirmation-page__countdown-value {
-    @apply font-serif text-lg text-petrol;
+  .confirm__delivery-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-ink-soft);
   }
 
-  .confirmation-page__upsell {
-    @apply mt-8 rounded-2xl bg-cream-2 px-6 py-5 text-sm text-neutral-body;
+  .confirm__delivery-details svg {
+    width: 20px;
+    height: 20px;
+    flex: none;
+    color: var(--color-berenjena);
   }
 
-  .confirmation-page__upsell-cta {
-    @apply mt-3 rounded-full border border-terracotta-dark px-4 py-2 text-xs font-bold text-terracotta-dark;
+  .confirm__packshot {
+    width: 100%;
+    max-width: 46ch;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 28px;
+    box-shadow: var(--shadow-lift);
   }
 
-  .confirmation-page__upsell-note {
-    @apply mt-3 text-xs text-neutral;
+  .confirm__after {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-top: 8px;
   }
 
-  .confirmation-page__restart {
-    @apply mt-10 text-sm font-semibold text-neutral underline decoration-dotted;
+  .confirm__upsell {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    font-size: 17px;
+  }
+
+  .confirm__note {
+    font-size: 15px;
+    color: var(--color-ink-soft);
+  }
+
+  .confirm__cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 24px;
+  }
+
+  .confirm__box {
+    margin: 0;
+    padding: 36px 64px 40px 40px;
+    border-radius: 36px;
+    background: var(--color-berenjena);
+    box-shadow: var(--shadow-lift);
+    transform: rotate(2deg);
+  }
+
+  .confirm__box-title {
+    margin: 0 0 20px;
+    color: var(--color-maiz);
+    font-size: clamp(22px, 2.4vw, 28px);
+  }
+
+  .confirm__box-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .confirm__box-list li {
+    position: relative;
+  }
+
+  .confirm__box-day {
+    position: absolute;
+    top: 6%;
+    left: 2%;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: var(--color-maiz);
+    color: var(--color-berenjena);
+    font-size: 14px;
+    font-weight: 700;
+    transform: rotate(-4deg);
+  }
+
+  .confirm__box-list li:nth-child(1) {
+    z-index: 5;
+  }
+  .confirm__box-list li:nth-child(2) {
+    z-index: 4;
+  }
+  .confirm__box-list li:nth-child(3) {
+    z-index: 3;
+  }
+  .confirm__box-list li:nth-child(4) {
+    z-index: 2;
+  }
+
+  @media (max-width: 900px) {
+    .confirm {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .confirm__box {
+      max-width: 460px;
+    }
   }
 }

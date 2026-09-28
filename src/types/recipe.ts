@@ -30,4 +30,6 @@ export interface Recipe {
   matchPercent: number;
   /** true = receta del "mazo" inicial; false = alterna usada como reemplazo. */
   isCore: boolean;
+  /** Ingredientes de la porción con su aporte calórico y peso; suman el `kcal` y los gramos totales. */
+  ingredients: { name: string; kcal: number; grams: number }[];
 }

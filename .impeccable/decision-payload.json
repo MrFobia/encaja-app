@@ -1,0 +1,133 @@
+{
+  "title": "Encaja · elige el mundo visual",
+  "question": "El sorteo asignó 'Encaje modular'. Quédate con él, toma una alternativa o vuelve a tirar.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Encaje modular",
+      "kicker": "THE ROLL",
+      "lineage": "bandejas troqueladas y rompecabezas de encaje (el nombre, tomado literal y funcional)",
+      "thesis": "La caja es una bandeja de 5 huecos: cada receta es una pieza que calza, y la que tiene alérgeno no entra.",
+      "palette": ["#FFD23F", "#2B1638", "#0E7C6B", "#C9B6FF", "#D7261E"],
+      "materials": ["piezas troqueladas con muescas", "cartón laminado de color plano"],
+      "viewport": "Bandeja gigante de 5 huecos a la derecha con piezas-receta encajando en vivo; titular corto y CTA a la izquierda sobre campo amarillo maíz.",
+      "risk": "Un rompecabezas literal se lee infantil si las muescas se dibujan como clip art.",
+      "raised": [
+        {"from": "challenger-sewing", "raise": "Estado de corte: hueco libre punteado, pieza guardada sólida; las muescas tienen que coincidir para encajar."},
+        {"from": "challenger-neon", "raise": "Un solo rojo en todo el sistema, el del alérgeno, con el peso del centro de gravedad."},
+        {"from": "challenger-sixpack", "raise": "Un instrumento fijo de la caja (huecos, alérgenos activos, kcal) visible en toda pantalla, con tendencia además de valor."},
+        {"from": "challenger-ebru", "raise": "Cada pieza que entra desplaza a sus vecinas; ningún cambio de estado es un corte seco."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.png"
+    },
+    {
+      "id": "model-pick",
+      "label": "Baraja de la semana",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "naipe español y cartas de juego impresas",
+      "thesis": "Cada receta es un naipe impreso; personalizar es repartir y descartar la mano de la semana.",
+      "palette": ["#F7F4EC", "#1F3FBF", "#F4A300", "#141414", "#D7261E"],
+      "materials": ["cartulina de naipe con esquinas numeradas", "reverso con patrón de marca"],
+      "viewport": "Una mano de 5 cartas abierta en abanico ocupando el centro, el mazo boca abajo al lado y el CTA como 'Repartir'.",
+      "risk": "Es la metáfora de cartas que casi toda app tipo swipe ya usa: familiar y eficaz, poco propia.",
+      "comp": ".impeccable/mocks/decision/model-pick.png"
+    },
+    {
+      "id": "challenger-sewing",
+      "label": "Molde de costura",
+      "verdict": "competitive",
+      "lineage": "sobre y papel seda de molde casero",
+      "thesis": "La caja como plano de corte: cada receta es una pieza numerada que se prende al pliegue.",
+      "palette": ["#E9DCC0", "#1A1A1A", "#1F3FBF", "#F2B8A0", "#D7261E"],
+      "materials": ["papel seda manila", "trazo de sastre punteado y sólido"],
+      "viewport": "Plano de corte con 5 piezas numeradas; la elegida en línea sólida, las demás punteadas.",
+      "case": "Explica el mecanismo mejor que ninguna (muescas que coinciden, punteado vs sólido); Daniela no vive en ese mundo.",
+      "risk": "Se lee como manualidad si el trazo técnico no es impecable.",
+      "comp": ".impeccable/mocks/decision/challenger-sewing.png",
+      "hero": "https://impeccable.style/worlds/cards/fashion-folded-worlds-sewing-pattern-envelope-hero.webp"
+    },
+    {
+      "id": "challenger-angura",
+      "label": "Afiche serigrafiado",
+      "verdict": "competitive",
+      "lineage": "afiche de teatro underground serigrafiado",
+      "thesis": "La semana como afiche: estallido de rayos, fotos recortadas de platos y fechas de corte en el borde.",
+      "palette": ["#12A37F", "#F7C21B", "#FFFFFF", "#1A1A1A", "#D7261E"],
+      "materials": ["tinta plana serigrafiada", "rotulado a mano"],
+      "viewport": "Estallido de rayos desde un plato recortado, titular rotulado y borde con jueves de entrega y domingo de corte.",
+      "case": "Conecta con el sticker y el color plano del benchmark; pierde claridad: su vermellón choca con la regla del rojo exclusivo y se traduce a jade.",
+      "risk": "Densidad de afiche puede tapar la acción principal.",
+      "comp": ".impeccable/mocks/decision/challenger-angura.png",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-angura-theatre-poster-hero.webp"
+    },
+    {
+      "id": "challenger-sixpack",
+      "label": "Seis relojes de vuelo",
+      "verdict": "declined",
+      "lineage": "tablero de instrumentos nocturno",
+      "thesis": "Seis relojes que coinciden entre sí.",
+      "palette": ["#0B0D0E", "#F2F2F2", "#5CFF9D", "#FFB020"],
+      "materials": ["panel negro mate", "numerales luminosos"],
+      "viewport": "Seis relojes en dos filas.",
+      "case": "Pierde en ambos ejes: la cocina de Daniela no es una cabina.",
+      "kept": "Un instrumento fijo de la caja con tendencia además de valor.",
+      "risk": "Frío para comida.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-night-flight-six-pack-hero.webp"
+    },
+    {
+      "id": "challenger-ebru",
+      "label": "Ebru",
+      "verdict": "declined",
+      "lineage": "pigmento flotante peinado",
+      "thesis": "Cada gota empuja a la anterior.",
+      "palette": ["#1B3A6B", "#E8B04A", "#C2462E", "#F4EEE2"],
+      "materials": ["baño espesado", "pigmento flotante"],
+      "viewport": "Un baño de color que se peina.",
+      "case": "Pierde en ambos ejes: bello, ajeno al producto.",
+      "kept": "Cada pieza que entra desplaza a sus vecinas.",
+      "risk": "Pesado de simular.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-ebru-floated-pigment-hero.webp"
+    },
+    {
+      "id": "challenger-neon",
+      "label": "Neón nocturno",
+      "verdict": "declined",
+      "lineage": "letreros de neón bajo lluvia",
+      "thesis": "Un solo rojo sostiene toda la noche.",
+      "palette": ["#07070A", "#FF2E88", "#22E5FF", "#FF2A2A"],
+      "materials": ["tubo de neón", "asfalto mojado"],
+      "viewport": "Torre de letreros.",
+      "case": "Pierde en ambos ejes: nocturno y ajeno a comida sana.",
+      "kept": "Un solo rojo, el del alérgeno, como centro de gravedad.",
+      "risk": "Ruido visual.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-neo-tokyo-neon-night-hero.webp"
+    },
+    {
+      "id": "challenger-plankton",
+      "label": "Plancton luminoso",
+      "verdict": "declined",
+      "lineage": "mar nocturno bioluminiscente",
+      "thesis": "Cada estela brilla y se apaga.",
+      "palette": ["#02060D", "#1E8BFF", "#7CF3FF"],
+      "materials": ["agua negra", "luz viva"],
+      "viewport": "Campo oscuro con estelas.",
+      "case": "Pierde en ambos ejes.",
+      "kept": "Lo descartado deja una huella que se desvanece, no desaparece mudo.",
+      "risk": "Oscuro y abstracto.",
+      "hero": "https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-plankton-wake-stars-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "comp", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "El estándar de la categoría",
+    "thesis": "Comida sana a domicilio como la hacen todos: verde bosque, lima, foto de bowl y grilla limpia.",
+    "palette": ["#FFFFFF", "#1E4D2B", "#C6F16D", "#111111"],
+    "materials": ["grilla limpia", "fotografía cenital de bowls"],
+    "viewport": "Foto de bowl a la derecha, titular en verde y botón lima.",
+    "risk": "Indistinguible de Okra, Ecobite o Smart Meals por diseño.",
+    "comp": ".impeccable/mocks/decision/canon.png"
+  },
+  "steer": true
+}

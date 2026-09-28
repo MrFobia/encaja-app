@@ -1,0 +1,10 @@
+{
+  "title": "Encaja · elige la composición",
+  "question": "Tres composiciones del mismo mundo. ¿Cuál se construye? Puedes pedir combinar partes en el comentario.",
+  "options": [
+    {"id": "comp-a", "label": "A · Bandeja lateral", "thesis": "Titular a la izquierda, bandeja de 5 huecos inclinada a la derecha y una pieza cayendo en su hueco.", "palette": ["#FFD23F","#2B1638","#0E7C6B","#C9B6FF","#D7261E"], "materials": ["piezas troqueladas","bandeja berenjena"], "viewport": "Split 45/55; instrumento de caja bajo el CTA; pieza con mariscos fuera de la bandeja.", "risk": "La bandeja domina; el gesto de swipe no se ve explícito.", "comp": ".impeccable/mocks/comp-a.png"},
+    {"id": "comp-b", "label": "B · Riel centrado", "thesis": "Titular a lo ancho y una bandeja-riel de 5 huecos; la tarjeta con Descartar/Guardar se arrastra hacia su hueco.", "palette": ["#FFD23F","#2B1638","#0E7C6B","#C9B6FF","#D7261E"], "materials": ["riel de 5 huecos","tarjeta arrastrable"], "viewport": "Todo centrado; el mecanismo de swipe y encaje se demuestra en el primer viewport.", "risk": "Composición simétrica de landing; el titular a una línea exige pantalla ancha.", "comp": ".impeccable/mocks/comp-b.png"},
+    {"id": "comp-c", "label": "C · Filtro vivo", "thesis": "El panel berenjena demuestra el filtro de alergias en vivo: chips, contador '7 de 8' y la receta con mariscos expulsada de la columna.", "palette": ["#FFD23F","#2B1638","#0E7C6B","#C9B6FF","#D7261E"], "materials": ["columna de piezas","chips de alergia"], "viewport": "Split con panel de filtro a la derecha y los 3 pasos encajados asomando abajo.", "risk": "Más denso; la bandeja se vuelve columna y pierde algo del objeto caja.", "comp": ".impeccable/mocks/comp-c.png"}
+  ],
+  "steer": true
+}

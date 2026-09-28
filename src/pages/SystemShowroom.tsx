@@ -14,50 +14,49 @@ const STATES: StateSpec[] = [
   {
     state: "default",
     recipeId: "bowl-garbanzos",
-    modifier: ".recipe-card",
-    note: "Estado de reposo. Foto real con fallback a gradiente, meta con tiempo/kcal/tag.",
+    modifier: ".rcard",
+    note: "Reposo: la loseta troquelada con la foto real, nombre en display y ficha.",
   },
   {
     state: "dragging",
     recipeId: "pollo-curry",
-    modifier: ".recipe-card--dragging",
-    note: "Mientras se arrastra: tinte salvia sobre la foto, etiqueta de estado en salvia.",
+    modifier: ".rcard--dragging",
+    note: "Mientras se arrastra: la pieza se levanta con sombra más larga.",
   },
   {
     state: "kept",
     recipeId: "salmon-teriyaki",
-    modifier: ".recipe-card--kept",
-    note: "Guardada con éxito: borde y halo salvia. Nunca rojo — el rojo es solo alergia.",
+    modifier: ".rcard--kept",
+    note: "Guardada: contorno teal, el color de actuar. Nunca rojo.",
   },
   {
     state: "discarded",
     recipeId: "pasta-pesto",
-    modifier: ".recipe-card--discarded",
-    note: "Descartada por gusto: opacidad reducida, foto en gris. Color neutro, no alérgeno.",
+    modifier: ".rcard--discarded",
+    note: "Descartada por gusto: pieza apagada y en gris, sin rojo.",
   },
   {
     state: "blocked",
     recipeId: "ceviche-mixto",
     blockedAllergens: ["mariscos"],
-    modifier: ".recipe-card--blocked",
-    note: "Único estado que usa #C23B22. Bloqueo real de seguridad, no de preferencia.",
+    modifier: ".rcard--blocked",
+    note: "Único estado con el rojo #D7261E: bloqueo de seguridad, no de gusto.",
   },
   {
     state: "loading",
     recipeId: "poke-atun",
-    modifier: ".recipe-card--loading",
-    note: "Buscando reemplazo automático tras un descarte: shimmer + nombre oculto.",
+    modifier: ".rcard--loading",
+    note: "Buscando reemplazo tras un descarte: hueco punteado que respira.",
   },
 ];
 
 export function SystemShowroom() {
   return (
     <div className="wrap system-page">
-      <h1 className="system-page__title">Tarjeta de receta — 6 estados</h1>
+      <h1 className="system-page__title">Tarjeta de receta, 6 estados</h1>
       <p className="system-page__lead">
-        El componente que sostiene todo el flujo de personalización, con sus estados
-        especificados de forma consistente. Cada tarjeta es el mismo bloque BEM
-        <code> .recipe-card</code>, solo cambia el modificador.
+        El componente que sostiene el flujo de personalización. Cada tarjeta es el mismo
+        bloque <code>.rcard</code>; solo cambia el modificador.
       </p>
 
       <div className="system-page__grid">

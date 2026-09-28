@@ -1,73 +1,145 @@
-@reference "../index.css";
 @layer components {
-  .preferences-page {
-    @apply max-w-2xl py-16;
+  .prefs {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: 48px 64px;
+    padding-top: clamp(40px, 6vw, 80px);
+    padding-bottom: clamp(56px, 8vw, 110px);
+    align-items: start;
   }
 
-  .preferences-page__title {
-    @apply mt-2 text-4xl;
+  .prefs__form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  .preferences-page__lead {
-    @apply mt-4 max-w-[65ch] text-[15.5px] text-neutral-body;
+  .prefs__title {
+    font-size: clamp(44px, 5.4vw, 84px);
+    max-width: 12ch;
   }
 
-  .preferences-page__section {
-    @apply mt-10;
+  .prefs__lead {
+    margin-top: -16px;
+    max-width: 44ch;
+    font-size: 20px;
+    font-weight: 500;
   }
 
-  .preferences-page__section-title {
-    @apply flex items-center gap-2.5 text-xl;
+  .prefs__group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .preferences-page__section-tag {
-    @apply rounded-full px-2.5 py-0.5 text-[11px] font-bold uppercase tracking-wide;
+  .prefs__group-title {
+    font-size: 34px;
   }
 
-  .preferences-page__section-tag--allergy {
-    background: rgba(194, 59, 34, 0.1);
-    color: var(--color-allergy);
+  .prefs__hint {
+    max-width: 48ch;
+    font-size: 16px;
+    color: var(--color-ink-soft);
   }
 
-  .preferences-page__section-tag--soft {
-    @apply bg-cream-2 text-neutral;
+  .prefs__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 8px;
   }
 
-  .preferences-page__section-hint {
-    @apply mt-1.5 max-w-[65ch] text-sm text-neutral;
+  .prefs__panel {
+    position: sticky;
+    top: 100px;
+    padding: 36px clamp(22px, 3vw, 40px) 40px;
+    border-radius: 36px;
+    background: var(--color-berenjena);
+    color: var(--color-on-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
   }
 
-  .preferences-page__chip-row {
-    @apply mt-4 flex flex-wrap gap-2.5;
+  .prefs__count {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
   }
 
-  .preferences-page__counter {
-    @apply mt-10 flex items-baseline gap-2.5 rounded-2xl border border-border bg-white px-6 py-5;
-    box-shadow: var(--shadow-card-sm);
+  .prefs__num {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 1;
+    color: #fff;
   }
 
-  .preferences-page__counter-value {
-    @apply font-serif text-4xl font-semibold text-petrol;
+  .prefs__unit {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-lila);
   }
 
-  .preferences-page__counter-label {
-    @apply text-sm text-neutral;
+  .prefs__pieces {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 34px;
   }
 
-  .preferences-page__actions {
-    @apply mt-8;
+  .prefs__piece {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .preferences-page__cta {
-    @apply rounded-full bg-terracotta-dark px-7 py-3.5 text-sm font-bold text-white transition-opacity duration-150;
-    box-shadow: 0 10px 24px -10px rgba(232, 98, 61, 0.55);
+  .prefs__piece-name {
+    font-size: 15px;
+    font-weight: 600;
   }
 
-  .preferences-page__cta:disabled {
-    @apply cursor-not-allowed opacity-40;
+  .prefs__piece.is-filtered .piece {
+    opacity: 0.35;
   }
 
-  .preferences-page__warn {
-    @apply mt-3 text-sm font-semibold text-allergy;
+  .prefs__piece.is-filtered .prefs__piece-name,
+  .prefs__piece.is-blocked .prefs__piece-name {
+    color: var(--color-on-dark-soft);
+  }
+
+  .prefs__piece-tag {
+    position: absolute;
+    top: -10px;
+    right: -6px;
+    transform: rotate(-3deg);
+  }
+
+  .prefs__piece-note {
+    font-size: 14px;
+    color: var(--color-on-dark-soft);
+  }
+
+  .prefs__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .prefs__warn {
+    font-size: 15px;
+    color: var(--color-maiz);
+  }
+
+  @media (max-width: 960px) {
+    .prefs {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .prefs__panel {
+      position: static;
+    }
   }
 }

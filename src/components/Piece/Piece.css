@@ -1,0 +1,55 @@
+@layer components {
+  .piece {
+    position: relative;
+  }
+
+  .piece--row {
+    aspect-ratio: 960 / 315;
+  }
+
+  .piece--tile {
+    aspect-ratio: 840 / 705;
+  }
+
+  .piece__img {
+    position: absolute;
+    max-width: none;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* 1148×503 con el cuerpo de 960×315 desplazado 93.5px */
+  .piece--row .piece__img {
+    left: -9.74%;
+    top: -29.7%;
+    width: 119.58%;
+  }
+
+  /* 1160×1025 con el cuerpo de 840×705 desplazado 160px */
+  .piece--tile .piece__img {
+    left: -19.03%;
+    top: -22.67%;
+    width: 138.1%;
+  }
+
+  .slot-outline__svg {
+    position: absolute;
+    overflow: visible;
+  }
+
+  .slot-outline__svg path {
+    fill: rgb(255 255 255 / 0.04);
+    stroke-width: 2.5px;
+    stroke-dasharray: 9 8;
+    stroke-linecap: round;
+  }
+
+  .slot-outline--light .slot-outline__svg path {
+    stroke: rgb(247 241 234 / 0.7);
+  }
+
+  .slot-outline--dark .slot-outline__svg path {
+    stroke: rgb(43 22 56 / 0.55);
+    fill: rgb(43 22 56 / 0.06);
+  }
+}
